@@ -15,5 +15,12 @@
         "test.ts"
     ],
     "public": false,
+    "targetVersions": {
+        "branch": "v1.4.43",
+        "tag": "v1.4.43",
+        "commits": "https://github.com/microsoft/pxt-adafruit/commits/88bf910aac7ce867e3bbfdaa08344a3ed30a0422",
+        "target": "1.4.43",
+        "pxt": "5.20.6"
+    },
     "preferredEditor": "tsprj"
 }
