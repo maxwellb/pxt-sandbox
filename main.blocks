@@ -1,3 +1,8 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <variables></variables>
+  <block type="pxt-on-start" x="30" y="50">
+    <statement name="HANDLER">
+      <block type="com_github_maxwellb_toolbox_noop"></block>
+    </statement>
+  </block>
 </xml>

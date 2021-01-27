@@ -3,7 +3,8 @@
     "version": "0.0.0",
     "description": "",
     "dependencies": {
-        "circuit-playground": "*"
+        "circuit-playground": "*",
+        "toolbox": "github:maxwellb/pxt-toolbox#9d9baa7a7b1a98cfb3123bbdb84168c25bf932a0"
     },
     "files": [
         "README.md",
