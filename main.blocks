@@ -1,31 +1,11 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <variables>
-    <variable id="X99g9`,6M/9Z=;^@,h((" type="">startupTasksComplete</variable>
-    <variable id="-ykR;k#uMs}qrAT6kA%y" type="">value</variable>
-    <variable id="fWkp)N$}JY53i27234SM" type="">strip</variable>
-    <variable id="F4Fp~h!76wI+6o`xyiSJ" type="">list</variable>
-    <variable id="xSt@!b4$Y1/Lw6r-dwm7" type="">toggle</variable>
+    <variable id="JD1WWS*#4TnT8i`r-a20" type="">counter_a</variable>
   </variables>
-  <block type="control_on_event" y="-170" x="1070">
-    <value name="src">
-      <shadow type="math_number">
-        <field name="NUM">1</field>
-      </shadow>
-    </value>
-    <value name="value">
-      <shadow type="math_number">
-        <field name="NUM">88</field>
-      </shadow>
-    </value>
+  <block type="pxt-on-start" x="0" y="0">
     <statement name="HANDLER">
-      <block type="variables_set">
-        <field id="F4Fp~h!76wI+6o`xyiSJ" name="VAR" variabletype="">list</field>
-        <value name="VALUE">
-          <block type="lists_create_with">
-            <mutation items="0"></mutation>
-          </block>
-        </value>
-        <next>
+      <block type="control_run_in_parallel">
+        <statement name="HANDLER">
           <block type="builtin_neopixel_set_pixel_color">
             <value name="pixeloffset">
               <shadow type="math_number">
@@ -34,389 +14,130 @@
             </value>
             <value name="rgb">
               <shadow type="colorNumberPicker">
-                <field name="value">0x000000</field>
+                <field name="value">0xff0000</field>
               </shadow>
             </value>
             <next>
               <block type="builtin_neopixel_set_pixel_color">
                 <value name="pixeloffset">
                   <shadow type="math_number">
-                    <field name="NUM">2</field>
+                    <field name="NUM">1</field>
                   </shadow>
                 </value>
                 <value name="rgb">
                   <shadow type="colorNumberPicker">
-                    <field name="value">0x000000</field>
+                    <field name="value">0xff0000</field>
                   </shadow>
                 </value>
                 <next>
                   <block type="builtin_neopixel_set_pixel_color">
                     <value name="pixeloffset">
                       <shadow type="math_number">
-                        <field name="NUM">4</field>
+                        <field name="NUM">2</field>
                       </shadow>
                     </value>
                     <value name="rgb">
                       <shadow type="colorNumberPicker">
-                        <field name="value">0x000000</field>
+                        <field name="value">0xff0000</field>
                       </shadow>
                     </value>
                     <next>
                       <block type="builtin_neopixel_set_pixel_color">
                         <value name="pixeloffset">
                           <shadow type="math_number">
-                            <field name="NUM">5</field>
+                            <field name="NUM">3</field>
                           </shadow>
                         </value>
                         <value name="rgb">
                           <shadow type="colorNumberPicker">
-                            <field name="value">0x000000</field>
+                            <field name="value">0xff0000</field>
                           </shadow>
                         </value>
                         <next>
-                          <block type="builtin_neopixel_set_pixel_color">
-                            <value name="pixeloffset">
-                              <shadow type="math_number">
-                                <field name="NUM">7</field>
-                              </shadow>
-                            </value>
-                            <value name="rgb">
-                              <shadow type="colorNumberPicker">
-                                <field name="value">0x000000</field>
+                          <block type="device_pause">
+                            <value name="pause">
+                              <shadow type="timePicker">
+                                <field name="ms">3000</field>
                               </shadow>
                             </value>
                             <next>
-                              <block type="timerRest">
-                                <field name="timer">control.timer1</field>
+                              <block type="builtin_neopixel_set_pixel_color">
+                                <value name="pixeloffset">
+                                  <shadow type="math_number">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="rgb">
+                                  <shadow type="colorNumberPicker">
+                                    <field name="value">0x000000</field>
+                                  </shadow>
+                                </value>
                                 <next>
-                                  <block type="com_github_maxwellb_toolbox_noop">
+                                  <block type="builtin_neopixel_set_pixel_color">
+                                    <value name="pixeloffset">
+                                      <shadow type="math_number">
+                                        <field name="NUM">1</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="rgb">
+                                      <shadow type="colorNumberPicker">
+                                        <field name="value">0x000000</field>
+                                      </shadow>
+                                    </value>
                                     <next>
-                                      <block type="control_run_in_parallel">
-                                        <statement name="HANDLER">
-                                          <block type="device_pause">
-                                            <value name="pause">
-                                              <shadow id="16ejZ_m)#QSKX8KE|JX2" type="timePicker">
-                                                <field name="ms">100</field>
+                                      <block type="builtin_neopixel_set_pixel_color">
+                                        <value name="pixeloffset">
+                                          <shadow type="math_number">
+                                            <field name="NUM">2</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="rgb">
+                                          <shadow type="colorNumberPicker">
+                                            <field name="value">0x000000</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="builtin_neopixel_set_pixel_color">
+                                            <value name="pixeloffset">
+                                              <shadow type="math_number">
+                                                <field name="NUM">3</field>
                                               </shadow>
-                                              <block type="math_arithmetic">
-                                                <field name="OP">MULTIPLY</field>
-                                                <value name="A">
-                                                  <shadow id="b06~kj]NuAy~7:UROdKK" type="math_number">
-                                                    <field name="NUM">0</field>
+                                            </value>
+                                            <value name="rgb">
+                                              <shadow type="colorNumberPicker">
+                                                <field name="value">0x000000</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="device_pause">
+                                                <value name="pause">
+                                                  <shadow type="timePicker">
+                                                    <field name="ms">500</field>
                                                   </shadow>
-                                                  <block type="device_random">
-                                                    <value name="min">
+                                                </value>
+                                                <next>
+                                                  <block type="variables_change">
+                                                    <field id="JD1WWS*#4TnT8i`r-a20" name="VAR" variabletype="">counter_a</field>
+                                                    <value name="VALUE">
                                                       <shadow type="math_number">
                                                         <field name="NUM">1</field>
                                                       </shadow>
-                                                    </value>
-                                                    <value name="limit">
-                                                      <shadow type="math_number">
-                                                        <field name="NUM">5</field>
-                                                      </shadow>
-                                                    </value>
-                                                  </block>
-                                                </value>
-                                                <value name="B">
-                                                  <shadow type="math_number">
-                                                    <field name="NUM">1000</field>
-                                                  </shadow>
-                                                </value>
-                                              </block>
-                                            </value>
-                                            <next>
-                                              <block type="control_raise_event">
-                                                <value name="src">
-                                                  <shadow type="math_number">
-                                                    <field name="NUM">10</field>
-                                                  </shadow>
-                                                </value>
-                                                <value name="value">
-                                                  <shadow type="math_number">
-                                                    <field name="NUM">1</field>
-                                                  </shadow>
-                                                </value>
-                                              </block>
-                                            </next>
-                                          </block>
-                                        </statement>
-                                        <next>
-                                          <block type="control_run_in_parallel">
-                                            <statement name="HANDLER">
-                                              <block type="device_pause">
-                                                <value name="pause">
-                                                  <shadow id="16ejZ_m)#QSKX8KE|JX2" type="timePicker">
-                                                    <field name="ms">100</field>
-                                                  </shadow>
-                                                  <block type="math_arithmetic">
-                                                    <field name="OP">MULTIPLY</field>
-                                                    <value name="A">
-                                                      <shadow id="b06~kj]NuAy~7:UROdKK" type="math_number">
-                                                        <field name="NUM">0</field>
-                                                      </shadow>
-                                                      <block type="device_random">
-                                                        <value name="min">
-                                                          <shadow type="math_number">
-                                                            <field name="NUM">1</field>
-                                                          </shadow>
-                                                        </value>
-                                                        <value name="limit">
-                                                          <shadow type="math_number">
-                                                            <field name="NUM">5</field>
-                                                          </shadow>
-                                                        </value>
-                                                      </block>
-                                                    </value>
-                                                    <value name="B">
-                                                      <shadow type="math_number">
-                                                        <field name="NUM">1000</field>
-                                                      </shadow>
-                                                    </value>
-                                                  </block>
-                                                </value>
-                                                <next>
-                                                  <block type="control_raise_event">
-                                                    <value name="src">
-                                                      <shadow type="math_number">
-                                                        <field name="NUM">10</field>
-                                                      </shadow>
-                                                    </value>
-                                                    <value name="value">
-                                                      <shadow type="math_number">
-                                                        <field name="NUM">3</field>
-                                                      </shadow>
-                                                    </value>
-                                                  </block>
-                                                </next>
-                                              </block>
-                                            </statement>
-                                            <next>
-                                              <block type="control_run_in_parallel">
-                                                <statement name="HANDLER">
-                                                  <block type="device_pause">
-                                                    <value name="pause">
-                                                      <shadow id="16ejZ_m)#QSKX8KE|JX2" type="timePicker">
-                                                        <field name="ms">100</field>
-                                                      </shadow>
-                                                      <block type="math_arithmetic">
-                                                        <field name="OP">MULTIPLY</field>
-                                                        <value name="A">
-                                                          <shadow id="b06~kj]NuAy~7:UROdKK" type="math_number">
-                                                            <field name="NUM">0</field>
-                                                          </shadow>
-                                                          <block type="device_random">
-                                                            <value name="min">
-                                                              <shadow type="math_number">
-                                                                <field name="NUM">1</field>
-                                                              </shadow>
-                                                            </value>
-                                                            <value name="limit">
-                                                              <shadow type="math_number">
-                                                                <field name="NUM">5</field>
-                                                              </shadow>
-                                                            </value>
-                                                          </block>
-                                                        </value>
-                                                        <value name="B">
-                                                          <shadow type="math_number">
-                                                            <field name="NUM">1000</field>
-                                                          </shadow>
-                                                        </value>
-                                                      </block>
                                                     </value>
                                                     <next>
                                                       <block type="control_raise_event">
                                                         <value name="src">
                                                           <shadow type="math_number">
-                                                            <field name="NUM">10</field>
+                                                            <field name="NUM">1</field>
                                                           </shadow>
                                                         </value>
                                                         <value name="value">
-                                                          <shadow type="math_number">
-                                                            <field name="NUM">5</field>
+                                                          <shadow id="0(2n1oB#1rZT]SwVS$*{" type="math_number">
+                                                            <field name="NUM">0</field>
                                                           </shadow>
-                                                        </value>
-                                                        <next>
-                                                          <block type="control_run_in_parallel">
-                                                            <statement name="HANDLER">
-                                                              <block type="device_pause">
-                                                                <value name="pause">
-                                                                  <shadow id="16ejZ_m)#QSKX8KE|JX2" type="timePicker">
-                                                                    <field name="ms">100</field>
-                                                                  </shadow>
-                                                                  <block type="math_arithmetic">
-                                                                    <field name="OP">MULTIPLY</field>
-                                                                    <value name="A">
-                                                                      <shadow id="b06~kj]NuAy~7:UROdKK" type="math_number">
-                                                                        <field name="NUM">0</field>
-                                                                      </shadow>
-                                                                      <block type="device_random">
-                                                                        <value name="min">
-                                                                          <shadow type="math_number">
-                                                                            <field name="NUM">1</field>
-                                                                          </shadow>
-                                                                        </value>
-                                                                        <value name="limit">
-                                                                          <shadow type="math_number">
-                                                                            <field name="NUM">5</field>
-                                                                          </shadow>
-                                                                        </value>
-                                                                      </block>
-                                                                    </value>
-                                                                    <value name="B">
-                                                                      <shadow type="math_number">
-                                                                        <field name="NUM">1000</field>
-                                                                      </shadow>
-                                                                    </value>
-                                                                  </block>
-                                                                </value>
-                                                                <next>
-                                                                  <block type="control_raise_event">
-                                                                    <value name="src">
-                                                                      <shadow type="math_number">
-                                                                        <field name="NUM">10</field>
-                                                                      </shadow>
-                                                                    </value>
-                                                                    <value name="value">
-                                                                      <shadow type="math_number">
-                                                                        <field name="NUM">7</field>
-                                                                      </shadow>
-                                                                    </value>
-                                                                  </block>
-                                                                </next>
-                                                              </block>
-                                                            </statement>
+                                                          <block type="variables_get">
+                                                            <field id="JD1WWS*#4TnT8i`r-a20" name="VAR" variabletype="">counter_a</field>
                                                           </block>
-                                                        </next>
-                                                      </block>
-                                                    </next>
-                                                  </block>
-                                                </statement>
-                                                <next>
-                                                  <block type="control_wait_for_event">
-                                                    <value name="src">
-                                                      <shadow type="math_number">
-                                                        <field name="NUM">1</field>
-                                                      </shadow>
-                                                    </value>
-                                                    <value name="value">
-                                                      <shadow type="math_number">
-                                                        <field name="NUM">99</field>
-                                                      </shadow>
-                                                    </value>
-                                                    <next>
-                                                      <block type="device_pause">
-                                                        <value name="pause">
-                                                          <shadow type="timePicker">
-                                                            <field name="ms">1000</field>
-                                                          </shadow>
                                                         </value>
-                                                        <next>
-                                                          <block type="builtin_neopixel_set_pixel_color">
-                                                            <value name="pixeloffset">
-                                                              <shadow type="math_number">
-                                                                <field name="NUM">7</field>
-                                                              </shadow>
-                                                            </value>
-                                                            <value name="rgb">
-                                                              <shadow type="colorNumberPicker">
-                                                                <field name="value">0x00ff00</field>
-                                                              </shadow>
-                                                            </value>
-                                                            <next>
-                                                              <block type="device_pause">
-                                                                <value name="pause">
-                                                                  <shadow id="v}*+/,MJK+N7dWc/OMBe" type="timePicker">
-                                                                    <field name="ms">3600</field>
-                                                                  </shadow>
-                                                                  <block type="device_random">
-                                                                    <value name="min">
-                                                                      <shadow type="math_number">
-                                                                        <field name="NUM">3600</field>
-                                                                      </shadow>
-                                                                    </value>
-                                                                    <value name="limit">
-                                                                      <shadow type="math_number">
-                                                                        <field name="NUM">6900</field>
-                                                                      </shadow>
-                                                                    </value>
-                                                                  </block>
-                                                                </value>
-                                                                <next>
-                                                                  <block type="device_while">
-                                                                    <value name="COND">
-                                                                      <shadow id="pw!qP{/8/mo~V]E4]uP*" type="logic_boolean">
-                                                                        <field name="BOOL">TRUE</field>
-                                                                      </shadow>
-                                                                      <block type="logic_operation">
-                                                                        <field name="OP">OR</field>
-                                                                        <value name="A">
-                                                                          <block type="logic_compare">
-                                                                            <field name="OP">EQ</field>
-                                                                            <value name="A">
-                                                                              <shadow type="math_number">
-                                                                                <field name="NUM">1</field>
-                                                                              </shadow>
-                                                                            </value>
-                                                                            <value name="B">
-                                                                              <shadow id="%zfAZi3(jzlt2QQ;Hnyl" type="math_number">
-                                                                                <field name="NUM">0</field>
-                                                                              </shadow>
-                                                                              <block type="variables_get">
-                                                                                <field id="xSt@!b4$Y1/Lw6r-dwm7" name="VAR" variabletype="">toggle</field>
-                                                                              </block>
-                                                                            </value>
-                                                                          </block>
-                                                                        </value>
-                                                                        <value name="B">
-                                                                          <block type="logic_compare">
-                                                                            <field name="OP">LT</field>
-                                                                            <value name="A">
-                                                                              <shadow type="math_number">
-                                                                                <field name="NUM">45</field>
-                                                                              </shadow>
-                                                                            </value>
-                                                                            <value name="B">
-                                                                              <shadow id=".jYd0qAh,P?N+C(dN%P$" type="math_number">
-                                                                                <field name="NUM">0</field>
-                                                                              </shadow>
-                                                                              <block type="timerSeconds">
-                                                                                <field name="timer">control.timer1</field>
-                                                                              </block>
-                                                                            </value>
-                                                                          </block>
-                                                                        </value>
-                                                                      </block>
-                                                                    </value>
-                                                                    <statement name="DO">
-                                                                      <block type="device_pause">
-                                                                        <value name="pause">
-                                                                          <shadow type="timePicker">
-                                                                            <field name="ms">5</field>
-                                                                          </shadow>
-                                                                        </value>
-                                                                      </block>
-                                                                    </statement>
-                                                                    <next>
-                                                                      <block type="control_raise_event">
-                                                                        <value name="src">
-                                                                          <shadow type="math_number">
-                                                                            <field name="NUM">1</field>
-                                                                          </shadow>
-                                                                        </value>
-                                                                        <value name="value">
-                                                                          <shadow type="math_number">
-                                                                            <field name="NUM">88</field>
-                                                                          </shadow>
-                                                                        </value>
-                                                                      </block>
-                                                                    </next>
-                                                                  </block>
-                                                                </next>
-                                                              </block>
-                                                            </next>
-                                                          </block>
-                                                        </next>
                                                       </block>
                                                     </next>
                                                   </block>
@@ -440,621 +161,10 @@
               </block>
             </next>
           </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="pxt-on-start" y="-130" x="650">
-    <statement name="HANDLER">
-      <block type="variables_set">
-        <field id="F4Fp~h!76wI+6o`xyiSJ" name="VAR" variabletype="">list</field>
-        <value name="VALUE">
-          <block type="lists_create_with">
-            <mutation items="0"></mutation>
-          </block>
-        </value>
-        <next>
-          <block type="variables_set">
-            <field id="xSt@!b4$Y1/Lw6r-dwm7" name="VAR" variabletype="">toggle</field>
-            <value name="VALUE">
-              <shadow type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
-            </value>
-            <next>
-              <block type="control_raise_event">
-                <value name="src">
-                  <shadow type="math_number">
-                    <field name="NUM">1</field>
-                  </shadow>
-                </value>
-                <value name="value">
-                  <shadow type="math_number">
-                    <field name="NUM">88</field>
-                  </shadow>
-                </value>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="control_on_event" y="-130" x="1670">
-    <value name="src">
-      <shadow type="math_number">
-        <field name="NUM">1</field>
-      </shadow>
-    </value>
-    <value name="value">
-      <shadow type="math_number">
-        <field name="NUM">1</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="controls_if">
-        <value name="IF0">
-          <shadow id="ZC!y)H]S7if|q:iOh[P+" type="logic_boolean">
-            <field name="BOOL">TRUE</field>
-          </shadow>
-          <block type="logic_compare">
-            <field name="OP">LTE</field>
-            <value name="A">
-              <shadow type="math_number">
-                <field name="NUM">3</field>
-              </shadow>
-            </value>
-            <value name="B">
-              <shadow id="m^Y8~IJ+eH]ZoIx/uu;?" type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
-              <block type="lists_length">
-                <value name="VALUE">
-                  <block type="variables_get">
-                    <field id="F4Fp~h!76wI+6o`xyiSJ" name="VAR" variabletype="">list</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-          </block>
-        </value>
-        <statement name="DO0">
-          <block type="control_raise_event">
-            <value name="src">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-            <value name="value">
-              <shadow type="math_number">
-                <field name="NUM">99</field>
-              </shadow>
-            </value>
-          </block>
         </statement>
-      </block>
-    </statement>
-  </block>
-  <block type="buttonEvent" y="210" x="230">
-    <field name="button">input.buttonA</field>
-    <field name="event">ButtonEvent.Click</field>
-    <statement name="HANDLER">
-      <block type="variables_set">
-        <field id="xSt@!b4$Y1/Lw6r-dwm7" name="VAR" variabletype="">toggle</field>
-        <value name="VALUE">
-          <shadow id="[,VZrtAtFW)$i,lE1E3u" type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-          <block type="math_op3">
-            <value name="x">
-              <shadow id="1SB/S@(gRz(.uD|W$uoK" type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
-              <block type="math_arithmetic">
-                <field name="OP">MINUS</field>
-                <value name="A">
-                  <shadow id="M]cO=4)dCP2MP?d5`=l0" type="math_number">
-                    <field name="NUM">0</field>
-                  </shadow>
-                  <block type="variables_get">
-                    <field id="xSt@!b4$Y1/Lw6r-dwm7" name="VAR" variabletype="">toggle</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <shadow type="math_number">
-                    <field name="NUM">1</field>
-                  </shadow>
-                </value>
-              </block>
-            </value>
-          </block>
-        </value>
         <next>
-          <block type="controls_if">
-            <mutation else="1"></mutation>
-            <value name="IF0">
-              <shadow id="xWj#`8SaBt5d3GE~|wOH" type="logic_boolean">
-                <field name="BOOL">TRUE</field>
-              </shadow>
-              <block type="logic_compare">
-                <field name="OP">LT</field>
-                <value name="A">
-                  <shadow type="math_number">
-                    <field name="NUM">0</field>
-                  </shadow>
-                </value>
-                <value name="B">
-                  <shadow id="[C?BB[r5~]MM%Y#uBX=X" type="math_number">
-                    <field name="NUM">0</field>
-                  </shadow>
-                  <block type="variables_get">
-                    <field id="xSt@!b4$Y1/Lw6r-dwm7" name="VAR" variabletype="">toggle</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <statement name="DO0">
-              <block type="mixer_play_note">
-                <value name="note">
-                  <shadow type="device_note">
-                    <field name="note">1700</field>
-                  </shadow>
-                </value>
-                <value name="duration">
-                  <shadow type="device_beat">
-                    <field name="fraction">BeatFraction.Eighth</field>
-                  </shadow>
-                </value>
-              </block>
-            </statement>
-            <statement name="ELSE">
-              <block type="mixer_play_note">
-                <value name="note">
-                  <shadow type="device_note">
-                    <field name="note">659</field>
-                  </shadow>
-                </value>
-                <value name="duration">
-                  <shadow type="device_beat">
-                    <field name="fraction">BeatFraction.Eighth</field>
-                  </shadow>
-                </value>
-              </block>
-            </statement>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="control_on_event" y="250" x="1670">
-    <value name="src">
-      <shadow type="math_number">
-        <field name="NUM">10</field>
-      </shadow>
-    </value>
-    <value name="value">
-      <shadow type="math_number">
-        <field name="NUM">1</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="device_pause">
-        <value name="pause">
-          <shadow id="+Dsxm2^QOGq59$whudaI" type="timePicker">
-            <field name="ms">100</field>
-          </shadow>
-          <block type="math_arithmetic">
-            <field name="OP">MULTIPLY</field>
-            <value name="A">
-              <shadow type="math_number">
-                <field name="NUM">100</field>
-              </shadow>
-            </value>
-            <value name="B">
-              <shadow id="2dqo{j,7ggX?i.PS{YH~" type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
-              <block type="device_random">
-                <value name="min">
-                  <shadow type="math_number">
-                    <field name="NUM">10</field>
-                  </shadow>
-                </value>
-                <value name="limit">
-                  <shadow type="math_number">
-                    <field name="NUM">40</field>
-                  </shadow>
-                </value>
-              </block>
-            </value>
-          </block>
-        </value>
-        <next>
-          <block type="controls_repeat_ext">
-            <value name="TIMES">
-              <shadow id="A=Mdy?nCeeD:a@y8UY2H" type="math_whole_number">
-                <field name="NUM">4</field>
-              </shadow>
-              <block type="device_random">
-                <value name="min">
-                  <shadow type="math_number">
-                    <field name="NUM">3</field>
-                  </shadow>
-                </value>
-                <value name="limit">
-                  <shadow type="math_number">
-                    <field name="NUM">10</field>
-                  </shadow>
-                </value>
-              </block>
-            </value>
-            <statement name="DO">
-              <block type="builtin_neopixel_set_pixel_color">
-                <value name="pixeloffset">
-                  <shadow type="math_number">
-                    <field name="NUM">0</field>
-                  </shadow>
-                </value>
-                <value name="rgb">
-                  <shadow id="@y?tq[H^zG?O/cTSV5rt" type="colorNumberPicker">
-                    <field name="value">0xff0000</field>
-                  </shadow>
-                  <block type="neopixel_rgb">
-                    <value name="red">
-                      <shadow type="math_number_minmax">
-                        <mutation min="0" max="255" label="Red"></mutation>
-                        <field name="SLIDER">60</field>
-                      </shadow>
-                    </value>
-                    <value name="green">
-                      <shadow type="math_number_minmax">
-                        <mutation min="0" max="255" label="Green"></mutation>
-                        <field name="SLIDER">40</field>
-                      </shadow>
-                    </value>
-                    <value name="blue">
-                      <shadow type="math_number_minmax">
-                        <mutation min="0" max="255" label="Blue"></mutation>
-                        <field name="SLIDER">0</field>
-                      </shadow>
-                    </value>
-                  </block>
-                </value>
-                <next>
-                  <block type="com_github_maxwellb_toolbox_noop">
-                    <next>
-                      <block type="device_pause">
-                        <value name="pause">
-                          <shadow type="timePicker">
-                            <field name="ms">500</field>
-                          </shadow>
-                        </value>
-                        <next>
-                          <block type="com_github_maxwellb_toolbox_noop">
-                            <next>
-                              <block type="builtin_neopixel_set_pixel_color">
-                                <value name="pixeloffset">
-                                  <shadow type="math_number">
-                                    <field name="NUM">0</field>
-                                  </shadow>
-                                </value>
-                                <value name="rgb">
-                                  <shadow id="@y?tq[H^zG?O/cTSV5rt" type="colorNumberPicker">
-                                    <field name="value">0xff0000</field>
-                                  </shadow>
-                                  <block type="neopixel_rgb">
-                                    <value name="red">
-                                      <shadow type="math_number_minmax">
-                                        <mutation min="0" max="255" label="Red"></mutation>
-                                        <field name="SLIDER">60</field>
-                                      </shadow>
-                                    </value>
-                                    <value name="green">
-                                      <shadow type="math_number_minmax">
-                                        <mutation min="0" max="255" label="Green"></mutation>
-                                        <field name="SLIDER">5</field>
-                                      </shadow>
-                                    </value>
-                                    <value name="blue">
-                                      <shadow type="math_number_minmax">
-                                        <mutation min="0" max="255" label="Blue"></mutation>
-                                        <field name="SLIDER">0</field>
-                                      </shadow>
-                                    </value>
-                                  </block>
-                                </value>
-                                <next>
-                                  <block type="com_github_maxwellb_toolbox_noop">
-                                    <next>
-                                      <block type="device_pause">
-                                        <value name="pause">
-                                          <shadow type="timePicker">
-                                            <field name="ms">500</field>
-                                          </shadow>
-                                        </value>
-                                      </block>
-                                    </next>
-                                  </block>
-                                </next>
-                              </block>
-                            </next>
-                          </block>
-                        </next>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </statement>
-            <next>
-              <block type="builtin_neopixel_set_pixel_color">
-                <value name="pixeloffset">
-                  <shadow type="math_number">
-                    <field name="NUM">0</field>
-                  </shadow>
-                </value>
-                <value name="rgb">
-                  <shadow id="@y?tq[H^zG?O/cTSV5rt" type="colorNumberPicker">
-                    <field name="value">0xff0000</field>
-                  </shadow>
-                  <block type="neopixel_rgb">
-                    <value name="red">
-                      <shadow type="math_number_minmax">
-                        <mutation min="0" max="255" label="Red"></mutation>
-                        <field name="SLIDER">100</field>
-                      </shadow>
-                    </value>
-                    <value name="green">
-                      <shadow type="math_number_minmax">
-                        <mutation min="0" max="255" label="Green"></mutation>
-                        <field name="SLIDER">0</field>
-                      </shadow>
-                    </value>
-                    <value name="blue">
-                      <shadow type="math_number_minmax">
-                        <mutation min="0" max="255" label="Blue"></mutation>
-                        <field name="SLIDER">65</field>
-                      </shadow>
-                    </value>
-                  </block>
-                </value>
-                <next>
-                  <block type="control_raise_event">
-                    <value name="src">
-                      <shadow type="math_number">
-                        <field name="NUM">10</field>
-                      </shadow>
-                    </value>
-                    <value name="value">
-                      <shadow type="math_number">
-                        <field name="NUM">2</field>
-                      </shadow>
-                    </value>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="control_on_event" y="250" x="2390">
-    <value name="src">
-      <shadow type="math_number">
-        <field name="NUM">10</field>
-      </shadow>
-    </value>
-    <value name="value">
-      <shadow type="math_number">
-        <field name="NUM">3</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="device_pause">
-        <value name="pause">
-          <shadow id="+Dsxm2^QOGq59$whudaI" type="timePicker">
-            <field name="ms">100</field>
-          </shadow>
-          <block type="math_arithmetic">
-            <field name="OP">MULTIPLY</field>
-            <value name="A">
-              <shadow type="math_number">
-                <field name="NUM">100</field>
-              </shadow>
-            </value>
-            <value name="B">
-              <shadow id="2dqo{j,7ggX?i.PS{YH~" type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
-              <block type="device_random">
-                <value name="min">
-                  <shadow type="math_number">
-                    <field name="NUM">10</field>
-                  </shadow>
-                </value>
-                <value name="limit">
-                  <shadow type="math_number">
-                    <field name="NUM">40</field>
-                  </shadow>
-                </value>
-              </block>
-            </value>
-          </block>
-        </value>
-        <next>
-          <block type="controls_repeat_ext">
-            <value name="TIMES">
-              <shadow id="A=Mdy?nCeeD:a@y8UY2H" type="math_whole_number">
-                <field name="NUM">4</field>
-              </shadow>
-              <block type="device_random">
-                <value name="min">
-                  <shadow type="math_number">
-                    <field name="NUM">3</field>
-                  </shadow>
-                </value>
-                <value name="limit">
-                  <shadow type="math_number">
-                    <field name="NUM">10</field>
-                  </shadow>
-                </value>
-              </block>
-            </value>
-            <statement name="DO">
-              <block type="builtin_neopixel_set_pixel_color">
-                <value name="pixeloffset">
-                  <shadow type="math_number">
-                    <field name="NUM">2</field>
-                  </shadow>
-                </value>
-                <value name="rgb">
-                  <shadow type="colorNumberPicker">
-                    <field name="value">0xff9da5</field>
-                  </shadow>
-                </value>
-                <next>
-                  <block type="com_github_maxwellb_toolbox_noop">
-                    <next>
-                      <block type="device_pause">
-                        <value name="pause">
-                          <shadow type="timePicker">
-                            <field name="ms">500</field>
-                          </shadow>
-                        </value>
-                        <next>
-                          <block type="com_github_maxwellb_toolbox_noop">
-                            <next>
-                              <block type="builtin_neopixel_set_pixel_color">
-                                <value name="pixeloffset">
-                                  <shadow type="math_number">
-                                    <field name="NUM">2</field>
-                                  </shadow>
-                                </value>
-                                <value name="rgb">
-                                  <shadow type="colorNumberPicker">
-                                    <field name="value">0x65471f</field>
-                                  </shadow>
-                                </value>
-                                <next>
-                                  <block type="com_github_maxwellb_toolbox_noop">
-                                    <next>
-                                      <block type="device_pause">
-                                        <value name="pause">
-                                          <shadow type="timePicker">
-                                            <field name="ms">500</field>
-                                          </shadow>
-                                        </value>
-                                      </block>
-                                    </next>
-                                  </block>
-                                </next>
-                              </block>
-                            </next>
-                          </block>
-                        </next>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </statement>
-            <next>
-              <block type="builtin_neopixel_set_pixel_color">
-                <value name="pixeloffset">
-                  <shadow type="math_number">
-                    <field name="NUM">2</field>
-                  </shadow>
-                </value>
-                <value name="rgb">
-                  <shadow type="colorNumberPicker">
-                    <field name="value">0xff8000</field>
-                  </shadow>
-                </value>
-                <next>
-                  <block type="control_raise_event">
-                    <value name="src">
-                      <shadow type="math_number">
-                        <field name="NUM">10</field>
-                      </shadow>
-                    </value>
-                    <value name="value">
-                      <shadow type="math_number">
-                        <field name="NUM">4</field>
-                      </shadow>
-                    </value>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="control_on_event" y="250" x="3010">
-    <value name="src">
-      <shadow type="math_number">
-        <field name="NUM">10</field>
-      </shadow>
-    </value>
-    <value name="value">
-      <shadow type="math_number">
-        <field name="NUM">5</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="device_pause">
-        <value name="pause">
-          <shadow id="+Dsxm2^QOGq59$whudaI" type="timePicker">
-            <field name="ms">100</field>
-          </shadow>
-          <block type="math_arithmetic">
-            <field name="OP">MULTIPLY</field>
-            <value name="A">
-              <shadow type="math_number">
-                <field name="NUM">100</field>
-              </shadow>
-            </value>
-            <value name="B">
-              <shadow id="2dqo{j,7ggX?i.PS{YH~" type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
-              <block type="device_random">
-                <value name="min">
-                  <shadow type="math_number">
-                    <field name="NUM">10</field>
-                  </shadow>
-                </value>
-                <value name="limit">
-                  <shadow type="math_number">
-                    <field name="NUM">40</field>
-                  </shadow>
-                </value>
-              </block>
-            </value>
-          </block>
-        </value>
-        <next>
-          <block type="controls_repeat_ext">
-            <value name="TIMES">
-              <shadow id="A=Mdy?nCeeD:a@y8UY2H" type="math_whole_number">
-                <field name="NUM">4</field>
-              </shadow>
-              <block type="device_random">
-                <value name="min">
-                  <shadow type="math_number">
-                    <field name="NUM">3</field>
-                  </shadow>
-                </value>
-                <value name="limit">
-                  <shadow type="math_number">
-                    <field name="NUM">10</field>
-                  </shadow>
-                </value>
-              </block>
-            </value>
-            <statement name="DO">
+          <block type="control_run_in_parallel">
+            <statement name="HANDLER">
               <block type="builtin_neopixel_set_pixel_color">
                 <value name="pixeloffset">
                   <shadow type="math_number">
@@ -1067,16 +177,36 @@
                   </shadow>
                 </value>
                 <next>
-                  <block type="com_github_maxwellb_toolbox_noop">
+                  <block type="builtin_neopixel_set_pixel_color">
+                    <value name="pixeloffset">
+                      <shadow type="math_number">
+                        <field name="NUM">5</field>
+                      </shadow>
+                    </value>
+                    <value name="rgb">
+                      <shadow type="colorNumberPicker">
+                        <field name="value">0x00ff00</field>
+                      </shadow>
+                    </value>
                     <next>
-                      <block type="device_pause">
-                        <value name="pause">
-                          <shadow type="timePicker">
-                            <field name="ms">500</field>
+                      <block type="builtin_neopixel_set_pixel_color">
+                        <value name="pixeloffset">
+                          <shadow type="math_number">
+                            <field name="NUM">6</field>
+                          </shadow>
+                        </value>
+                        <value name="rgb">
+                          <shadow type="colorNumberPicker">
+                            <field name="value">0x00ff00</field>
                           </shadow>
                         </value>
                         <next>
-                          <block type="com_github_maxwellb_toolbox_noop">
+                          <block type="device_pause">
+                            <value name="pause">
+                              <shadow type="timePicker">
+                                <field name="ms">1000</field>
+                              </shadow>
+                            </value>
                             <next>
                               <block type="builtin_neopixel_set_pixel_color">
                                 <value name="pixeloffset">
@@ -1086,18 +216,69 @@
                                 </value>
                                 <value name="rgb">
                                   <shadow type="colorNumberPicker">
-                                    <field name="value">0x999999</field>
+                                    <field name="value">0x000000</field>
                                   </shadow>
                                 </value>
                                 <next>
-                                  <block type="com_github_maxwellb_toolbox_noop">
+                                  <block type="builtin_neopixel_set_pixel_color">
+                                    <value name="pixeloffset">
+                                      <shadow type="math_number">
+                                        <field name="NUM">5</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="rgb">
+                                      <shadow type="colorNumberPicker">
+                                        <field name="value">0x000000</field>
+                                      </shadow>
+                                    </value>
                                     <next>
-                                      <block type="device_pause">
-                                        <value name="pause">
-                                          <shadow type="timePicker">
-                                            <field name="ms">500</field>
+                                      <block type="builtin_neopixel_set_pixel_color">
+                                        <value name="pixeloffset">
+                                          <shadow type="math_number">
+                                            <field name="NUM">6</field>
                                           </shadow>
                                         </value>
+                                        <value name="rgb">
+                                          <shadow type="colorNumberPicker">
+                                            <field name="value">0x000000</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="device_pause">
+                                            <value name="pause">
+                                              <shadow type="timePicker">
+                                                <field name="ms">500</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="variables_change">
+                                                <field id="JD1WWS*#4TnT8i`r-a20" name="VAR" variabletype="">counter_a</field>
+                                                <value name="VALUE">
+                                                  <shadow type="math_number">
+                                                    <field name="NUM">1</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="control_raise_event">
+                                                    <value name="src">
+                                                      <shadow type="math_number">
+                                                        <field name="NUM">1</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="value">
+                                                      <shadow id="0(2n1oB#1rZT]SwVS$*{" type="math_number">
+                                                        <field name="NUM">0</field>
+                                                      </shadow>
+                                                      <block type="variables_get">
+                                                        <field id="JD1WWS*#4TnT8i`r-a20" name="VAR" variabletype="">counter_a</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
                                       </block>
                                     </next>
                                   </block>
@@ -1113,51 +294,136 @@
               </block>
             </statement>
             <next>
-              <block type="builtin_neopixel_set_pixel_color">
-                <value name="pixeloffset">
-                  <shadow type="math_number">
-                    <field name="NUM">4</field>
-                  </shadow>
-                </value>
-                <value name="rgb">
-                  <shadow id="@y?tq[H^zG?O/cTSV5rt" type="colorNumberPicker">
-                    <field name="value">0xff0000</field>
-                  </shadow>
-                  <block type="neopixel_rgb">
-                    <value name="red">
-                      <shadow type="math_number_minmax">
-                        <mutation min="0" max="255" label="Red"></mutation>
-                        <field name="SLIDER">0</field>
-                      </shadow>
-                    </value>
-                    <value name="green">
-                      <shadow type="math_number_minmax">
-                        <mutation min="0" max="255" label="Green"></mutation>
-                        <field name="SLIDER">80</field>
-                      </shadow>
-                    </value>
-                    <value name="blue">
-                      <shadow type="math_number_minmax">
-                        <mutation min="0" max="255" label="Blue"></mutation>
-                        <field name="SLIDER">80</field>
-                      </shadow>
-                    </value>
-                  </block>
-                </value>
-                <next>
-                  <block type="control_raise_event">
-                    <value name="src">
+              <block type="control_run_in_parallel">
+                <statement name="HANDLER">
+                  <block type="builtin_neopixel_set_pixel_color">
+                    <value name="pixeloffset">
                       <shadow type="math_number">
-                        <field name="NUM">10</field>
+                        <field name="NUM">7</field>
                       </shadow>
                     </value>
-                    <value name="value">
-                      <shadow type="math_number">
-                        <field name="NUM">6</field>
+                    <value name="rgb">
+                      <shadow type="colorNumberPicker">
+                        <field name="value">0x007fff</field>
                       </shadow>
                     </value>
+                    <next>
+                      <block type="builtin_neopixel_set_pixel_color">
+                        <value name="pixeloffset">
+                          <shadow type="math_number">
+                            <field name="NUM">8</field>
+                          </shadow>
+                        </value>
+                        <value name="rgb">
+                          <shadow type="colorNumberPicker">
+                            <field name="value">0x007fff</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="builtin_neopixel_set_pixel_color">
+                            <value name="pixeloffset">
+                              <shadow type="math_number">
+                                <field name="NUM">9</field>
+                              </shadow>
+                            </value>
+                            <value name="rgb">
+                              <shadow type="colorNumberPicker">
+                                <field name="value">0x007fff</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="device_pause">
+                                <value name="pause">
+                                  <shadow type="timePicker">
+                                    <field name="ms">5000</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="builtin_neopixel_set_pixel_color">
+                                    <value name="pixeloffset">
+                                      <shadow type="math_number">
+                                        <field name="NUM">7</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="rgb">
+                                      <shadow type="colorNumberPicker">
+                                        <field name="value">0x000000</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="builtin_neopixel_set_pixel_color">
+                                        <value name="pixeloffset">
+                                          <shadow type="math_number">
+                                            <field name="NUM">8</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="rgb">
+                                          <shadow type="colorNumberPicker">
+                                            <field name="value">0x000000</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="builtin_neopixel_set_pixel_color">
+                                            <value name="pixeloffset">
+                                              <shadow type="math_number">
+                                                <field name="NUM">9</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="rgb">
+                                              <shadow type="colorNumberPicker">
+                                                <field name="value">0x000000</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="device_pause">
+                                                <value name="pause">
+                                                  <shadow type="timePicker">
+                                                    <field name="ms">500</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="variables_change">
+                                                    <field id="JD1WWS*#4TnT8i`r-a20" name="VAR" variabletype="">counter_a</field>
+                                                    <value name="VALUE">
+                                                      <shadow type="math_number">
+                                                        <field name="NUM">1</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <next>
+                                                      <block type="control_raise_event">
+                                                        <value name="src">
+                                                          <shadow type="math_number">
+                                                            <field name="NUM">1</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="value">
+                                                          <shadow id="0(2n1oB#1rZT]SwVS$*{" type="math_number">
+                                                            <field name="NUM">0</field>
+                                                          </shadow>
+                                                          <block type="variables_get">
+                                                            <field id="JD1WWS*#4TnT8i`r-a20" name="VAR" variabletype="">counter_a</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
                   </block>
-                </next>
+                </statement>
               </block>
             </next>
           </block>
@@ -1165,82 +431,45 @@
       </block>
     </statement>
   </block>
-  <block type="control_on_event" y="270" x="3690">
+  <block type="control_on_event" x="450" y="-10">
     <value name="src">
       <shadow type="math_number">
-        <field name="NUM">10</field>
+        <field name="NUM">1</field>
       </shadow>
     </value>
     <value name="value">
       <shadow type="math_number">
-        <field name="NUM">7</field>
+        <field name="NUM">3</field>
       </shadow>
     </value>
     <statement name="HANDLER">
-      <block type="device_pause">
-        <value name="pause">
-          <shadow id="+Dsxm2^QOGq59$whudaI" type="timePicker">
-            <field name="ms">100</field>
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <shadow type="math_whole_number">
+            <field name="NUM">3</field>
           </shadow>
-          <block type="math_arithmetic">
-            <field name="OP">MULTIPLY</field>
-            <value name="A">
-              <shadow type="math_number">
-                <field name="NUM">100</field>
-              </shadow>
-            </value>
-            <value name="B">
-              <shadow id="2dqo{j,7ggX?i.PS{YH~" type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
-              <block type="device_random">
-                <value name="min">
-                  <shadow type="math_number">
-                    <field name="NUM">10</field>
-                  </shadow>
-                </value>
-                <value name="limit">
-                  <shadow type="math_number">
-                    <field name="NUM">40</field>
-                  </shadow>
-                </value>
-              </block>
-            </value>
-          </block>
         </value>
-        <next>
-          <block type="controls_repeat_ext">
-            <value name="TIMES">
-              <shadow id="A=Mdy?nCeeD:a@y8UY2H" type="math_whole_number">
-                <field name="NUM">4</field>
+        <statement name="DO">
+          <block type="builtin_neopixel_set_strip_color">
+            <value name="rgb">
+              <shadow type="colorNumberPicker">
+                <field name="value">0xffff00</field>
               </shadow>
-              <block type="device_random">
-                <value name="min">
-                  <shadow type="math_number">
-                    <field name="NUM">3</field>
-                  </shadow>
-                </value>
-                <value name="limit">
-                  <shadow type="math_number">
-                    <field name="NUM">10</field>
-                  </shadow>
-                </value>
-              </block>
             </value>
-            <statement name="DO">
-              <block type="builtin_neopixel_set_pixel_color">
-                <value name="pixeloffset">
-                  <shadow type="math_number">
-                    <field name="NUM">5</field>
-                  </shadow>
-                </value>
-                <value name="rgb">
-                  <shadow type="colorNumberPicker">
-                    <field name="value">0xffff00</field>
+            <next>
+              <block type="device_pause">
+                <value name="pause">
+                  <shadow type="timePicker">
+                    <field name="ms">500</field>
                   </shadow>
                 </value>
                 <next>
-                  <block type="com_github_maxwellb_toolbox_noop">
+                  <block type="builtin_neopixel_set_strip_color">
+                    <value name="rgb">
+                      <shadow type="colorNumberPicker">
+                        <field name="value">0x000000</field>
+                      </shadow>
+                    </value>
                     <next>
                       <block type="device_pause">
                         <value name="pause">
@@ -1248,447 +477,14 @@
                             <field name="ms">500</field>
                           </shadow>
                         </value>
-                        <next>
-                          <block type="com_github_maxwellb_toolbox_noop">
-                            <next>
-                              <block type="builtin_neopixel_set_pixel_color">
-                                <value name="pixeloffset">
-                                  <shadow type="math_number">
-                                    <field name="NUM">5</field>
-                                  </shadow>
-                                </value>
-                                <value name="rgb">
-                                  <shadow type="colorNumberPicker">
-                                    <field name="value">0x00ffff</field>
-                                  </shadow>
-                                </value>
-                                <next>
-                                  <block type="com_github_maxwellb_toolbox_noop">
-                                    <next>
-                                      <block type="device_pause">
-                                        <value name="pause">
-                                          <shadow type="timePicker">
-                                            <field name="ms">500</field>
-                                          </shadow>
-                                        </value>
-                                      </block>
-                                    </next>
-                                  </block>
-                                </next>
-                              </block>
-                            </next>
-                          </block>
-                        </next>
                       </block>
                     </next>
                   </block>
                 </next>
               </block>
-            </statement>
-            <next>
-              <block type="builtin_neopixel_set_pixel_color">
-                <value name="pixeloffset">
-                  <shadow type="math_number">
-                    <field name="NUM">5</field>
-                  </shadow>
-                </value>
-                <value name="rgb">
-                  <shadow type="colorNumberPicker">
-                    <field name="value">0xff0000</field>
-                  </shadow>
-                </value>
-                <next>
-                  <block type="control_raise_event">
-                    <value name="src">
-                      <shadow type="math_number">
-                        <field name="NUM">10</field>
-                      </shadow>
-                    </value>
-                    <value name="value">
-                      <shadow type="math_number">
-                        <field name="NUM">8</field>
-                      </shadow>
-                    </value>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="buttonEvent" y="650" x="230">
-    <field name="button">input.buttonB</field>
-    <field name="event">ButtonEvent.LongClick</field>
-    <statement name="HANDLER">
-      <block type="control_reset"></block>
-    </statement>
-  </block>
-  <block type="control_on_event" y="1030" x="1670">
-    <value name="src">
-      <shadow type="math_number">
-        <field name="NUM">10</field>
-      </shadow>
-    </value>
-    <value name="value">
-      <shadow type="math_number">
-        <field name="NUM">2</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="array_insertAt">
-        <value name="list">
-          <block type="variables_get">
-            <field id="F4Fp~h!76wI+6o`xyiSJ" name="VAR" variabletype="">list</field>
-          </block>
-        </value>
-        <value name="index">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
-        <value name="value">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <next>
-          <block type="control_raise_event">
-            <value name="src">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-            <value name="value">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="control_on_event" y="1050" x="2150">
-    <value name="src">
-      <shadow type="math_number">
-        <field name="NUM">10</field>
-      </shadow>
-    </value>
-    <value name="value">
-      <shadow type="math_number">
-        <field name="NUM">4</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="array_insertAt">
-        <value name="list">
-          <block type="variables_get">
-            <field id="F4Fp~h!76wI+6o`xyiSJ" name="VAR" variabletype="">list</field>
-          </block>
-        </value>
-        <value name="index">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
-        <value name="value">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <next>
-          <block type="control_raise_event">
-            <value name="src">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-            <value name="value">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="forever" y="1180" x="0">
-    <statement name="HANDLER">
-      <block type="pxt_controls_for">
-        <value name="VAR">
-          <shadow type="variables_get_reporter">
-            <field id="-ykR;k#uMs}qrAT6kA%y" name="VAR" variabletype="">value</field>
-          </shadow>
-        </value>
-        <value name="TO">
-          <shadow type="math_whole_number">
-            <field name="NUM">19</field>
-          </shadow>
-        </value>
-        <statement name="DO">
-          <block type="builtin_neopixel_set_pixel_color">
-            <value name="pixeloffset">
-              <shadow type="math_number">
-                <field name="NUM">9</field>
-              </shadow>
-            </value>
-            <value name="rgb">
-              <shadow id="@y?tq[H^zG?O/cTSV5rt" type="colorNumberPicker">
-                <field name="value">0xff0000</field>
-              </shadow>
-              <block type="neopixel_rgb">
-                <value name="red">
-                  <shadow type="math_number_minmax">
-                    <mutation min="0" max="255" label="Red"></mutation>
-                    <field name="SLIDER">0</field>
-                  </shadow>
-                </value>
-                <value name="green">
-                  <shadow type="math_number_minmax">
-                    <mutation min="0" max="255" label="Green"></mutation>
-                    <field name="SLIDER">0</field>
-                  </shadow>
-                </value>
-                <value name="blue">
-                  <shadow id="eyX%@DRZB;_UEW.GN]B[" type="math_number_minmax">
-                    <mutation min="0" max="255" label="Blue"></mutation>
-                    <field name="SLIDER">255</field>
-                  </shadow>
-                  <block type="math_arithmetic">
-                    <field name="OP">ADD</field>
-                    <value name="A">
-                      <shadow type="math_number">
-                        <field name="NUM">20</field>
-                      </shadow>
-                    </value>
-                    <value name="B">
-                      <shadow id="+7}/`HOO0{2E_?#q$cYO" type="math_number">
-                        <field name="NUM">0</field>
-                      </shadow>
-                      <block type="math_arithmetic">
-                        <field name="OP">MULTIPLY</field>
-                        <value name="A">
-                          <shadow type="math_number">
-                            <field name="NUM">11</field>
-                          </shadow>
-                        </value>
-                        <value name="B">
-                          <shadow id="{il[+hGm)dKK;LIV_JOV" type="math_number">
-                            <field name="NUM">0</field>
-                          </shadow>
-                          <block type="variables_get">
-                            <field id="-ykR;k#uMs}qrAT6kA%y" name="VAR" variabletype="">value</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <next>
-              <block type="device_pause">
-                <value name="pause">
-                  <shadow type="timePicker">
-                    <field name="ms">50</field>
-                  </shadow>
-                </value>
-              </block>
             </next>
           </block>
         </statement>
-        <next>
-          <block type="pxt_controls_for">
-            <value name="VAR">
-              <shadow type="variables_get_reporter">
-                <field id="-ykR;k#uMs}qrAT6kA%y" name="VAR" variabletype="">value</field>
-              </shadow>
-            </value>
-            <value name="TO">
-              <shadow type="math_whole_number">
-                <field name="NUM">19</field>
-              </shadow>
-            </value>
-            <statement name="DO">
-              <block type="builtin_neopixel_set_pixel_color">
-                <value name="pixeloffset">
-                  <shadow type="math_number">
-                    <field name="NUM">9</field>
-                  </shadow>
-                </value>
-                <value name="rgb">
-                  <shadow id="@y?tq[H^zG?O/cTSV5rt" type="colorNumberPicker">
-                    <field name="value">0xff0000</field>
-                  </shadow>
-                  <block type="neopixel_rgb">
-                    <value name="red">
-                      <shadow type="math_number_minmax">
-                        <mutation min="0" max="255" label="Red"></mutation>
-                        <field name="SLIDER">0</field>
-                      </shadow>
-                    </value>
-                    <value name="green">
-                      <shadow type="math_number_minmax">
-                        <mutation min="0" max="255" label="Green"></mutation>
-                        <field name="SLIDER">0</field>
-                      </shadow>
-                    </value>
-                    <value name="blue">
-                      <shadow id="eyX%@DRZB;_UEW.GN]B[" type="math_number_minmax">
-                        <mutation min="0" max="255" label="Blue"></mutation>
-                        <field name="SLIDER">255</field>
-                      </shadow>
-                      <block type="math_arithmetic">
-                        <field name="OP">ADD</field>
-                        <value name="A">
-                          <shadow type="math_number">
-                            <field name="NUM">20</field>
-                          </shadow>
-                        </value>
-                        <value name="B">
-                          <shadow id="hJa1MN`V8`l5q2*Sf68E" type="math_number">
-                            <field name="NUM">0</field>
-                          </shadow>
-                          <block type="math_arithmetic">
-                            <field name="OP">MULTIPLY</field>
-                            <value name="A">
-                              <shadow type="math_number">
-                                <field name="NUM">11</field>
-                              </shadow>
-                            </value>
-                            <value name="B">
-                              <shadow id="{il[+hGm)dKK;LIV_JOV" type="math_number">
-                                <field name="NUM">0</field>
-                              </shadow>
-                              <block type="math_arithmetic">
-                                <field name="OP">MINUS</field>
-                                <value name="A">
-                                  <shadow type="math_number">
-                                    <field name="NUM">19</field>
-                                  </shadow>
-                                </value>
-                                <value name="B">
-                                  <shadow id="RM*qgxt/=DA}^iv(js7Z" type="math_number">
-                                    <field name="NUM">0</field>
-                                  </shadow>
-                                  <block type="variables_get">
-                                    <field id="-ykR;k#uMs}qrAT6kA%y" name="VAR" variabletype="">value</field>
-                                  </block>
-                                </value>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <next>
-                  <block type="device_pause">
-                    <value name="pause">
-                      <shadow type="timePicker">
-                        <field name="ms">50</field>
-                      </shadow>
-                    </value>
-                  </block>
-                </next>
-              </block>
-            </statement>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="control_on_event" y="1050" x="2630">
-    <value name="src">
-      <shadow type="math_number">
-        <field name="NUM">10</field>
-      </shadow>
-    </value>
-    <value name="value">
-      <shadow type="math_number">
-        <field name="NUM">6</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="array_insertAt">
-        <value name="list">
-          <block type="variables_get">
-            <field id="F4Fp~h!76wI+6o`xyiSJ" name="VAR" variabletype="">list</field>
-          </block>
-        </value>
-        <value name="index">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
-        <value name="value">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <next>
-          <block type="control_raise_event">
-            <value name="src">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-            <value name="value">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="control_on_event" y="1050" x="3070">
-    <value name="src">
-      <shadow type="math_number">
-        <field name="NUM">10</field>
-      </shadow>
-    </value>
-    <value name="value">
-      <shadow type="math_number">
-        <field name="NUM">8</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="array_insertAt">
-        <value name="list">
-          <block type="variables_get">
-            <field id="F4Fp~h!76wI+6o`xyiSJ" name="VAR" variabletype="">list</field>
-          </block>
-        </value>
-        <value name="index">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
-        <value name="value">
-          <block type="math_number">
-            <field name="NUM">1</field>
-          </block>
-        </value>
-        <next>
-          <block type="control_raise_event">
-            <value name="src">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-            <value name="value">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-          </block>
-        </next>
       </block>
     </statement>
   </block>
