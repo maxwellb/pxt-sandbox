@@ -22,5 +22,5 @@
         "target": "1.4.43",
         "pxt": "5.20.6"
     },
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }

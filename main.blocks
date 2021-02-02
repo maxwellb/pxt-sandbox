@@ -1,52 +1,165 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <variables>
-    <variable id="JD1WWS*#4TnT8i`r-a20" type="">counter_a</variable>
+    <variable id="V2BTvwQ_tyl?Qy6lrr%E" type="">mode</variable>
+    <variable id="JgWjT}1e:[tAc;j9;8O|" type="">ambient</variable>
+    <variable id="6[s90jP1_d)6lD`y-k,z" type="">index</variable>
+    <variable id="[y(_V*--iRMcb8PQA.|`" type="">steady</variable>
+    <variable id="ls=/n;p6|4K;dvG`OxMZ" type="">interrupt</variable>
+    <variable id="Fx:!5e|,5lK7X,GhJiq6" type="">blinky</variable>
   </variables>
-  <block type="pxt-on-start" x="0" y="0">
+  <block type="buttonEvent" y="20" x="620">
+    <field name="button">input.buttonA</field>
+    <field name="event">ButtonEvent.Click</field>
     <statement name="HANDLER">
-      <block type="control_run_in_parallel">
-        <statement name="HANDLER">
-          <block type="builtin_neopixel_set_pixel_color">
-            <value name="pixeloffset">
-              <shadow type="math_number">
-                <field name="NUM">0</field>
+      <block type="variables_change">
+        <field id="V2BTvwQ_tyl?Qy6lrr%E" name="VAR" variabletype="">mode</field>
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="controls_if">
+            <value name="IF0">
+              <shadow id="x*Fv0O{DqYTuUJ/QEUvM" type="logic_boolean">
+                <field name="BOOL">TRUE</field>
               </shadow>
+              <block type="logic_compare">
+                <field name="OP">GT</field>
+                <value name="A">
+                  <shadow id="M=uWL{dex)G-9kIKcb?v" type="math_number">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="variables_get">
+                    <field id="V2BTvwQ_tyl?Qy6lrr%E" name="VAR" variabletype="">mode</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number">
+                    <field name="NUM">3</field>
+                  </shadow>
+                </value>
+              </block>
             </value>
-            <value name="rgb">
-              <shadow type="colorNumberPicker">
-                <field name="value">0xff0000</field>
-              </shadow>
-            </value>
-            <next>
-              <block type="builtin_neopixel_set_pixel_color">
-                <value name="pixeloffset">
+            <statement name="DO0">
+              <block type="variables_set">
+                <field id="V2BTvwQ_tyl?Qy6lrr%E" name="VAR" variabletype="">mode</field>
+                <value name="VALUE">
                   <shadow type="math_number">
                     <field name="NUM">1</field>
                   </shadow>
                 </value>
-                <value name="rgb">
-                  <shadow type="colorNumberPicker">
-                    <field name="value">0xff0000</field>
+              </block>
+            </statement>
+            <next>
+              <block type="device_pause">
+                <value name="pause">
+                  <shadow type="timePicker">
+                    <field name="ms">500</field>
                   </shadow>
                 </value>
                 <next>
-                  <block type="builtin_neopixel_set_pixel_color">
-                    <value name="pixeloffset">
+                  <block type="control_raise_event">
+                    <value name="src">
                       <shadow type="math_number">
-                        <field name="NUM">2</field>
+                        <field name="NUM">10</field>
                       </shadow>
                     </value>
-                    <value name="rgb">
-                      <shadow type="colorNumberPicker">
-                        <field name="value">0xff0000</field>
+                    <value name="value">
+                      <shadow id="`J_K)j$jxD]}o`jT3*tQ" type="math_number">
+                        <field name="NUM">0</field>
                       </shadow>
+                      <block type="variables_get">
+                        <field id="V2BTvwQ_tyl?Qy6lrr%E" name="VAR" variabletype="">mode</field>
+                      </block>
                     </value>
-                    <next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="control_on_event" y="40" x="1100">
+    <value name="src">
+      <shadow type="math_number">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+    <value name="value">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="builtin_neopixel_set_brightness">
+        <value name="brightness">
+          <shadow type="math_number_minmax">
+            <mutation min="0" max="255" label="Brightness"></mutation>
+            <field name="SLIDER">255</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="builtin_neopixel_set_strip_color">
+            <value name="rgb">
+              <shadow type="colorNumberPicker">
+                <field name="value">0x000000</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="variables_set">
+                <field id="6[s90jP1_d)6lD`y-k,z" name="VAR" variabletype="">index</field>
+                <value name="VALUE">
+                  <shadow type="math_number">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="device_while">
+                    <value name="COND">
+                      <shadow id="dRO|SHAgQT@p!|cf=uRa" type="logic_boolean">
+                        <field name="BOOL">TRUE</field>
+                      </shadow>
+                      <block type="logic_compare">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <shadow id="WS,[9S;u~S%N/(8PjP3}" type="math_number">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="variables_get">
+                            <field id="V2BTvwQ_tyl?Qy6lrr%E" name="VAR" variabletype="">mode</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO">
                       <block type="builtin_neopixel_set_pixel_color">
                         <value name="pixeloffset">
-                          <shadow type="math_number">
-                            <field name="NUM">3</field>
+                          <shadow id="yG4Y(5-=6:J@.e*%8mQ7" type="math_number">
+                            <field name="NUM">0</field>
                           </shadow>
+                          <block type="math_modulo">
+                            <value name="DIVIDEND">
+                              <shadow id="RukGm(oRIjasxnn+hrBP" type="math_number">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="variables_get">
+                                <field id="6[s90jP1_d)6lD`y-k,z" name="VAR" variabletype="">index</field>
+                              </block>
+                            </value>
+                            <value name="DIVISOR">
+                              <shadow type="math_number">
+                                <field name="NUM">10</field>
+                              </shadow>
+                            </value>
+                          </block>
                         </value>
                         <value name="rgb">
                           <shadow type="colorNumberPicker">
@@ -54,42 +167,113 @@
                           </shadow>
                         </value>
                         <next>
-                          <block type="device_pause">
-                            <value name="pause">
-                              <shadow type="timePicker">
-                                <field name="ms">3000</field>
+                          <block type="builtin_neopixel_set_pixel_color">
+                            <value name="pixeloffset">
+                              <shadow id="9vPCGtY_Jv{g7:nOgBR~" type="math_number">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="math_modulo">
+                                <value name="DIVIDEND">
+                                  <shadow id="o#sMP~+}bJU*zYGV~|t2" type="math_number">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="math_arithmetic">
+                                    <field name="OP">ADD</field>
+                                    <value name="A">
+                                      <shadow id="gt|]2EUC#4@6M;G-RMkP" type="math_number">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                      <block type="variables_get">
+                                        <field id="6[s90jP1_d)6lD`y-k,z" name="VAR" variabletype="">index</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <shadow type="math_number">
+                                        <field name="NUM">1</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="DIVISOR">
+                                  <shadow type="math_number">
+                                    <field name="NUM">10</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="rgb">
+                              <shadow type="colorNumberPicker">
+                                <field name="value">0xff0000</field>
                               </shadow>
                             </value>
                             <next>
                               <block type="builtin_neopixel_set_pixel_color">
                                 <value name="pixeloffset">
-                                  <shadow type="math_number">
+                                  <shadow id="U8~gRL:CF|tCP~=x4/G_" type="math_number">
                                     <field name="NUM">0</field>
                                   </shadow>
+                                  <block type="math_modulo">
+                                    <value name="DIVIDEND">
+                                      <shadow id="o#sMP~+}bJU*zYGV~|t2" type="math_number">
+                                        <field name="NUM">0</field>
+                                      </shadow>
+                                      <block type="math_arithmetic">
+                                        <field name="OP">ADD</field>
+                                        <value name="A">
+                                          <shadow id="gt|]2EUC#4@6M;G-RMkP" type="math_number">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                          <block type="variables_get">
+                                            <field id="6[s90jP1_d)6lD`y-k,z" name="VAR" variabletype="">index</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <shadow type="math_number">
+                                            <field name="NUM">2</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="DIVISOR">
+                                      <shadow type="math_number">
+                                        <field name="NUM">10</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
                                 </value>
                                 <value name="rgb">
                                   <shadow type="colorNumberPicker">
-                                    <field name="value">0x000000</field>
+                                    <field name="value">0xffff00</field>
                                   </shadow>
                                 </value>
                                 <next>
-                                  <block type="builtin_neopixel_set_pixel_color">
-                                    <value name="pixeloffset">
-                                      <shadow type="math_number">
-                                        <field name="NUM">1</field>
-                                      </shadow>
-                                    </value>
-                                    <value name="rgb">
-                                      <shadow type="colorNumberPicker">
-                                        <field name="value">0x000000</field>
+                                  <block type="device_pause">
+                                    <value name="pause">
+                                      <shadow type="timePicker">
+                                        <field name="ms">100</field>
                                       </shadow>
                                     </value>
                                     <next>
                                       <block type="builtin_neopixel_set_pixel_color">
                                         <value name="pixeloffset">
-                                          <shadow type="math_number">
-                                            <field name="NUM">2</field>
+                                          <shadow id="yG4Y(5-=6:J@.e*%8mQ7" type="math_number">
+                                            <field name="NUM">0</field>
                                           </shadow>
+                                          <block type="math_modulo">
+                                            <value name="DIVIDEND">
+                                              <shadow id="RukGm(oRIjasxnn+hrBP" type="math_number">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                              <block type="variables_get">
+                                                <field id="6[s90jP1_d)6lD`y-k,z" name="VAR" variabletype="">index</field>
+                                              </block>
+                                            </value>
+                                            <value name="DIVISOR">
+                                              <shadow type="math_number">
+                                                <field name="NUM">10</field>
+                                              </shadow>
+                                            </value>
+                                          </block>
                                         </value>
                                         <value name="rgb">
                                           <shadow type="colorNumberPicker">
@@ -97,53 +281,13 @@
                                           </shadow>
                                         </value>
                                         <next>
-                                          <block type="builtin_neopixel_set_pixel_color">
-                                            <value name="pixeloffset">
+                                          <block type="variables_change">
+                                            <field id="6[s90jP1_d)6lD`y-k,z" name="VAR" variabletype="">index</field>
+                                            <value name="VALUE">
                                               <shadow type="math_number">
-                                                <field name="NUM">3</field>
+                                                <field name="NUM">1</field>
                                               </shadow>
                                             </value>
-                                            <value name="rgb">
-                                              <shadow type="colorNumberPicker">
-                                                <field name="value">0x000000</field>
-                                              </shadow>
-                                            </value>
-                                            <next>
-                                              <block type="device_pause">
-                                                <value name="pause">
-                                                  <shadow type="timePicker">
-                                                    <field name="ms">500</field>
-                                                  </shadow>
-                                                </value>
-                                                <next>
-                                                  <block type="variables_change">
-                                                    <field id="JD1WWS*#4TnT8i`r-a20" name="VAR" variabletype="">counter_a</field>
-                                                    <value name="VALUE">
-                                                      <shadow type="math_number">
-                                                        <field name="NUM">1</field>
-                                                      </shadow>
-                                                    </value>
-                                                    <next>
-                                                      <block type="control_raise_event">
-                                                        <value name="src">
-                                                          <shadow type="math_number">
-                                                            <field name="NUM">1</field>
-                                                          </shadow>
-                                                        </value>
-                                                        <value name="value">
-                                                          <shadow id="0(2n1oB#1rZT]SwVS$*{" type="math_number">
-                                                            <field name="NUM">0</field>
-                                                          </shadow>
-                                                          <block type="variables_get">
-                                                            <field id="JD1WWS*#4TnT8i`r-a20" name="VAR" variabletype="">counter_a</field>
-                                                          </block>
-                                                        </value>
-                                                      </block>
-                                                    </next>
-                                                  </block>
-                                                </next>
-                                              </block>
-                                            </next>
                                           </block>
                                         </next>
                                       </block>
@@ -155,134 +299,257 @@
                           </block>
                         </next>
                       </block>
-                    </next>
+                    </statement>
                   </block>
                 </next>
               </block>
             </next>
           </block>
-        </statement>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="pxt-on-start" y="100" x="220">
+    <statement name="HANDLER">
+      <block type="neopixel_show_ring_colors">
+        <field name="colors">`blue purple blue purple blue blue pink blue pink blue`</field>
         <next>
-          <block type="control_run_in_parallel">
-            <statement name="HANDLER">
-              <block type="builtin_neopixel_set_pixel_color">
-                <value name="pixeloffset">
-                  <shadow type="math_number">
-                    <field name="NUM">4</field>
+          <block type="variables_set">
+            <field id="[y(_V*--iRMcb8PQA.|`" name="VAR" variabletype="">steady</field>
+            <value name="VALUE">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="control_on_event" y="20" x="1880">
+    <value name="src">
+      <shadow type="math_number">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+    <value name="value">
+      <shadow type="math_number">
+        <field name="NUM">2</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="builtin_neopixel_set_brightness">
+        <value name="brightness">
+          <shadow type="math_number_minmax">
+            <mutation min="0" max="255" label="Brightness"></mutation>
+            <field name="SLIDER">255</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="builtin_neopixel_set_strip_color">
+            <value name="rgb">
+              <shadow type="colorNumberPicker">
+                <field name="value">0x000000</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="device_while">
+                <value name="COND">
+                  <shadow id="~]N~MEr2aCno98Do!=f_" type="logic_boolean">
+                    <field name="BOOL">TRUE</field>
                   </shadow>
-                </value>
-                <value name="rgb">
-                  <shadow type="colorNumberPicker">
-                    <field name="value">0x00ff00</field>
-                  </shadow>
-                </value>
-                <next>
-                  <block type="builtin_neopixel_set_pixel_color">
-                    <value name="pixeloffset">
+                  <block type="logic_compare">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <shadow id=";feBXTxhi@e(0X+G_at{" type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="variables_get">
+                        <field id="V2BTvwQ_tyl?Qy6lrr%E" name="VAR" variabletype="">mode</field>
+                      </block>
+                    </value>
+                    <value name="B">
                       <shadow type="math_number">
-                        <field name="NUM">5</field>
+                        <field name="NUM">2</field>
                       </shadow>
                     </value>
-                    <value name="rgb">
-                      <shadow type="colorNumberPicker">
-                        <field name="value">0x00ff00</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="builtin_neopixel_set_pixel_color">
+                    <value name="pixeloffset">
+                      <shadow id=";_~:TR*uxJs(Qu=A_;a]" type="math_number">
+                        <field name="NUM">0</field>
                       </shadow>
+                      <block type="device_random">
+                        <value name="min">
+                          <shadow type="math_number">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <value name="limit">
+                          <shadow type="math_number">
+                            <field name="NUM">9</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="rgb">
+                      <shadow id="%+SAR|1@4#3ICD`qZQgg" type="colorNumberPicker">
+                        <field name="value">0xff0000</field>
+                      </shadow>
+                      <block type="neopixel_hsv">
+                        <value name="hue">
+                          <shadow id="G[K-7x`vQ}X)CGSW+nJ6" type="math_number_minmax">
+                            <mutation min="0" max="255" label="Hue"></mutation>
+                            <field name="SLIDER">255</field>
+                          </shadow>
+                          <block type="device_random">
+                            <value name="min">
+                              <shadow type="math_number">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                            <value name="limit">
+                              <shadow type="math_number">
+                                <field name="NUM">255</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="sat">
+                          <shadow type="math_number_minmax">
+                            <mutation min="0" max="255" label="Sat"></mutation>
+                            <field name="SLIDER">255</field>
+                          </shadow>
+                        </value>
+                        <value name="val">
+                          <shadow type="math_number_minmax">
+                            <mutation min="0" max="255" label="Val"></mutation>
+                            <field name="SLIDER">119</field>
+                          </shadow>
+                        </value>
+                      </block>
                     </value>
                     <next>
                       <block type="builtin_neopixel_set_pixel_color">
                         <value name="pixeloffset">
-                          <shadow type="math_number">
-                            <field name="NUM">6</field>
+                          <shadow id="?raqc-BI@`RS2(SXNFrD" type="math_number">
+                            <field name="NUM">1</field>
                           </shadow>
-                        </value>
-                        <value name="rgb">
-                          <shadow type="colorNumberPicker">
-                            <field name="value">0x00ff00</field>
-                          </shadow>
-                        </value>
-                        <next>
-                          <block type="device_pause">
-                            <value name="pause">
-                              <shadow type="timePicker">
-                                <field name="ms">1000</field>
+                          <block type="device_random">
+                            <value name="min">
+                              <shadow type="math_number">
+                                <field name="NUM">0</field>
                               </shadow>
                             </value>
-                            <next>
-                              <block type="builtin_neopixel_set_pixel_color">
-                                <value name="pixeloffset">
+                            <value name="limit">
+                              <shadow type="math_number">
+                                <field name="NUM">9</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="rgb">
+                          <shadow id="YdFo2HU~9i03gfWom.yP" type="colorNumberPicker">
+                            <field name="value">0xff0000</field>
+                          </shadow>
+                          <block type="neopixel_hsv">
+                            <value name="hue">
+                              <shadow id="G[K-7x`vQ}X)CGSW+nJ6" type="math_number_minmax">
+                                <mutation min="0" max="255" label="Hue"></mutation>
+                                <field name="SLIDER">255</field>
+                              </shadow>
+                              <block type="device_random">
+                                <value name="min">
                                   <shadow type="math_number">
-                                    <field name="NUM">4</field>
+                                    <field name="NUM">0</field>
                                   </shadow>
                                 </value>
-                                <value name="rgb">
-                                  <shadow type="colorNumberPicker">
-                                    <field name="value">0x000000</field>
+                                <value name="limit">
+                                  <shadow type="math_number">
+                                    <field name="NUM">255</field>
                                   </shadow>
                                 </value>
-                                <next>
-                                  <block type="builtin_neopixel_set_pixel_color">
-                                    <value name="pixeloffset">
+                              </block>
+                            </value>
+                            <value name="sat">
+                              <shadow type="math_number_minmax">
+                                <mutation min="0" max="255" label="Sat"></mutation>
+                                <field name="SLIDER">255</field>
+                              </shadow>
+                            </value>
+                            <value name="val">
+                              <shadow type="math_number_minmax">
+                                <mutation min="0" max="255" label="Val"></mutation>
+                                <field name="SLIDER">119</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="builtin_neopixel_set_pixel_color">
+                            <value name="pixeloffset">
+                              <shadow id="@9R5$az:Mgr|1VsE@3};" type="math_number">
+                                <field name="NUM">2</field>
+                              </shadow>
+                              <block type="device_random">
+                                <value name="min">
+                                  <shadow type="math_number">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                </value>
+                                <value name="limit">
+                                  <shadow type="math_number">
+                                    <field name="NUM">9</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="rgb">
+                              <shadow id="F_13`m`#nP!(*M6]i5;m" type="colorNumberPicker">
+                                <field name="value">0xff0000</field>
+                              </shadow>
+                              <block type="neopixel_hsv">
+                                <value name="hue">
+                                  <shadow id="G[K-7x`vQ}X)CGSW+nJ6" type="math_number_minmax">
+                                    <mutation min="0" max="255" label="Hue"></mutation>
+                                    <field name="SLIDER">255</field>
+                                  </shadow>
+                                  <block type="device_random">
+                                    <value name="min">
                                       <shadow type="math_number">
-                                        <field name="NUM">5</field>
+                                        <field name="NUM">0</field>
                                       </shadow>
                                     </value>
-                                    <value name="rgb">
-                                      <shadow type="colorNumberPicker">
-                                        <field name="value">0x000000</field>
+                                    <value name="limit">
+                                      <shadow type="math_number">
+                                        <field name="NUM">255</field>
                                       </shadow>
                                     </value>
-                                    <next>
-                                      <block type="builtin_neopixel_set_pixel_color">
-                                        <value name="pixeloffset">
-                                          <shadow type="math_number">
-                                            <field name="NUM">6</field>
-                                          </shadow>
-                                        </value>
-                                        <value name="rgb">
-                                          <shadow type="colorNumberPicker">
-                                            <field name="value">0x000000</field>
-                                          </shadow>
-                                        </value>
-                                        <next>
-                                          <block type="device_pause">
-                                            <value name="pause">
-                                              <shadow type="timePicker">
-                                                <field name="ms">500</field>
-                                              </shadow>
-                                            </value>
-                                            <next>
-                                              <block type="variables_change">
-                                                <field id="JD1WWS*#4TnT8i`r-a20" name="VAR" variabletype="">counter_a</field>
-                                                <value name="VALUE">
-                                                  <shadow type="math_number">
-                                                    <field name="NUM">1</field>
-                                                  </shadow>
-                                                </value>
-                                                <next>
-                                                  <block type="control_raise_event">
-                                                    <value name="src">
-                                                      <shadow type="math_number">
-                                                        <field name="NUM">1</field>
-                                                      </shadow>
-                                                    </value>
-                                                    <value name="value">
-                                                      <shadow id="0(2n1oB#1rZT]SwVS$*{" type="math_number">
-                                                        <field name="NUM">0</field>
-                                                      </shadow>
-                                                      <block type="variables_get">
-                                                        <field id="JD1WWS*#4TnT8i`r-a20" name="VAR" variabletype="">counter_a</field>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </next>
-                                              </block>
-                                            </next>
-                                          </block>
-                                        </next>
-                                      </block>
-                                    </next>
                                   </block>
-                                </next>
+                                </value>
+                                <value name="sat">
+                                  <shadow type="math_number_minmax">
+                                    <mutation min="0" max="255" label="Sat"></mutation>
+                                    <field name="SLIDER">255</field>
+                                  </shadow>
+                                </value>
+                                <value name="val">
+                                  <shadow type="math_number_minmax">
+                                    <mutation min="0" max="255" label="Val"></mutation>
+                                    <field name="SLIDER">119</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="device_pause">
+                                <value name="pause">
+                                  <shadow type="timePicker">
+                                    <field name="ms">85</field>
+                                  </shadow>
+                                </value>
                               </block>
                             </next>
                           </block>
@@ -290,120 +557,773 @@
                       </block>
                     </next>
                   </block>
-                </next>
+                </statement>
               </block>
-            </statement>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="control_on_event" y="0" x="2460">
+    <value name="src">
+      <shadow type="math_number">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+    <value name="value">
+      <shadow type="math_number">
+        <field name="NUM">3</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="input_on_light_condition_changed" y="540" x="200">
+    <field name="condition">LightCondition.Dark</field>
+    <statement name="HANDLER">
+      <block type="variables_set">
+        <field id="JgWjT}1e:[tAc;j9;8O|" name="VAR" variabletype="">ambient</field>
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">-1</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="buttonEvent" y="520" x="680">
+    <field name="button">input.buttonB</field>
+    <field name="event">ButtonEvent.Click</field>
+    <statement name="HANDLER">
+      <block type="variables_set">
+        <field id="V2BTvwQ_tyl?Qy6lrr%E" name="VAR" variabletype="">mode</field>
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="variables_set">
+            <field id="ls=/n;p6|4K;dvG`OxMZ" name="VAR" variabletype="">interrupt</field>
+            <value name="VALUE">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
             <next>
-              <block type="control_run_in_parallel">
-                <statement name="HANDLER">
-                  <block type="builtin_neopixel_set_pixel_color">
-                    <value name="pixeloffset">
+              <block type="controls_if">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                  <shadow id="m^HcEJh32LL_7SB(%f}0" type="logic_boolean">
+                    <field name="BOOL">TRUE</field>
+                  </shadow>
+                  <block type="logic_compare">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <shadow id=":(Wq14SLp.46iL~|V=sD" type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="variables_get">
+                        <field id="[y(_V*--iRMcb8PQA.|`" name="VAR" variabletype="">steady</field>
+                      </block>
+                    </value>
+                    <value name="B">
                       <shadow type="math_number">
-                        <field name="NUM">7</field>
+                        <field name="NUM">1</field>
                       </shadow>
                     </value>
-                    <value name="rgb">
-                      <shadow type="colorNumberPicker">
-                        <field name="value">0x007fff</field>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="variables_set">
+                    <field id="[y(_V*--iRMcb8PQA.|`" name="VAR" variabletype="">steady</field>
+                    <value name="VALUE">
+                      <shadow type="math_number">
+                        <field name="NUM">0</field>
                       </shadow>
                     </value>
                     <next>
-                      <block type="builtin_neopixel_set_pixel_color">
-                        <value name="pixeloffset">
-                          <shadow type="math_number">
-                            <field name="NUM">8</field>
-                          </shadow>
-                        </value>
-                        <value name="rgb">
-                          <shadow type="colorNumberPicker">
-                            <field name="value">0x007fff</field>
+                      <block type="builtin_neopixel_set_brightness">
+                        <value name="brightness">
+                          <shadow type="math_number_minmax">
+                            <mutation min="0" max="255" label="Brightness"></mutation>
+                            <field name="SLIDER">8</field>
                           </shadow>
                         </value>
                         <next>
-                          <block type="builtin_neopixel_set_pixel_color">
-                            <value name="pixeloffset">
-                              <shadow type="math_number">
-                                <field name="NUM">9</field>
-                              </shadow>
-                            </value>
-                            <value name="rgb">
-                              <shadow type="colorNumberPicker">
-                                <field name="value">0x007fff</field>
+                          <block type="neopixel_show_ring_colors">
+                            <field name="colors">`blue blue blue blue blue blue blue blue blue blue`</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <statement name="ELSE">
+                  <block type="variables_set">
+                    <field id="[y(_V*--iRMcb8PQA.|`" name="VAR" variabletype="">steady</field>
+                    <value name="VALUE">
+                      <shadow type="math_number">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="variables_change">
+                        <field id="ls=/n;p6|4K;dvG`OxMZ" name="VAR" variabletype="">interrupt</field>
+                        <value name="VALUE">
+                          <shadow type="math_number">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="builtin_neopixel_set_brightness">
+                            <value name="brightness">
+                              <shadow type="math_number_minmax">
+                                <mutation min="0" max="255" label="Brightness"></mutation>
+                                <field name="SLIDER">78</field>
                               </shadow>
                             </value>
                             <next>
-                              <block type="device_pause">
-                                <value name="pause">
-                                  <shadow type="timePicker">
-                                    <field name="ms">5000</field>
-                                  </shadow>
-                                </value>
+                              <block type="neopixel_show_ring_colors">
+                                <field name="colors">`black black black black black black black black black black`</field>
                                 <next>
-                                  <block type="builtin_neopixel_set_pixel_color">
-                                    <value name="pixeloffset">
-                                      <shadow type="math_number">
-                                        <field name="NUM">7</field>
+                                  <block type="device_while">
+                                    <value name="COND">
+                                      <shadow id="24mI3YRI:A3#yDshDOuQ" type="logic_boolean">
+                                        <field name="BOOL">TRUE</field>
                                       </shadow>
-                                    </value>
-                                    <value name="rgb">
-                                      <shadow type="colorNumberPicker">
-                                        <field name="value">0x000000</field>
-                                      </shadow>
-                                    </value>
-                                    <next>
-                                      <block type="builtin_neopixel_set_pixel_color">
-                                        <value name="pixeloffset">
+                                      <block type="logic_compare">
+                                        <field name="OP">GT</field>
+                                        <value name="A">
+                                          <shadow id="GZldYax07h8X,(X!#{DN" type="math_number">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                          <block type="variables_get">
+                                            <field id="ls=/n;p6|4K;dvG`OxMZ" name="VAR" variabletype="">interrupt</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
                                           <shadow type="math_number">
-                                            <field name="NUM">8</field>
+                                            <field name="NUM">0</field>
                                           </shadow>
                                         </value>
-                                        <value name="rgb">
-                                          <shadow type="colorNumberPicker">
-                                            <field name="value">0x000000</field>
+                                      </block>
+                                    </value>
+                                    <statement name="DO">
+                                      <block type="controls_if">
+                                        <mutation else="1"></mutation>
+                                        <value name="IF0">
+                                          <shadow id="V#3A1xxu?NRK:yUXdHC0" type="logic_boolean">
+                                            <field name="BOOL">TRUE</field>
                                           </shadow>
+                                          <block type="logic_compare">
+                                            <field name="OP">GT</field>
+                                            <value name="A">
+                                              <shadow id="U?*hD[N[0jcf$0T#dyE]" type="math_number">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                              <block type="device_temperature">
+                                                <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <shadow type="math_number">
+                                                <field name="NUM">50</field>
+                                              </shadow>
+                                            </value>
+                                          </block>
                                         </value>
-                                        <next>
+                                        <statement name="DO0">
                                           <block type="builtin_neopixel_set_pixel_color">
                                             <value name="pixeloffset">
                                               <shadow type="math_number">
-                                                <field name="NUM">9</field>
+                                                <field name="NUM">0</field>
                                               </shadow>
                                             </value>
                                             <value name="rgb">
                                               <shadow type="colorNumberPicker">
-                                                <field name="value">0x000000</field>
+                                                <field name="value">0xff8000</field>
                                               </shadow>
                                             </value>
                                             <next>
-                                              <block type="device_pause">
-                                                <value name="pause">
-                                                  <shadow type="timePicker">
-                                                    <field name="ms">500</field>
+                                              <block type="variables_set">
+                                                <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                <value name="VALUE">
+                                                  <shadow type="math_number">
+                                                    <field name="NUM">0</field>
                                                   </shadow>
                                                 </value>
                                                 <next>
-                                                  <block type="variables_change">
-                                                    <field id="JD1WWS*#4TnT8i`r-a20" name="VAR" variabletype="">counter_a</field>
-                                                    <value name="VALUE">
-                                                      <shadow type="math_number">
-                                                        <field name="NUM">1</field>
+                                                  <block type="controls_if">
+                                                    <mutation else="1"></mutation>
+                                                    <value name="IF0">
+                                                      <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                        <field name="BOOL">TRUE</field>
                                                       </shadow>
+                                                      <block type="logic_compare">
+                                                        <field name="OP">GT</field>
+                                                        <value name="A">
+                                                          <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                            <field name="NUM">0</field>
+                                                          </shadow>
+                                                          <block type="device_temperature">
+                                                            <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <shadow type="math_number">
+                                                            <field name="NUM">55</field>
+                                                          </shadow>
+                                                        </value>
+                                                      </block>
                                                     </value>
-                                                    <next>
-                                                      <block type="control_raise_event">
-                                                        <value name="src">
+                                                    <statement name="DO0">
+                                                      <block type="builtin_neopixel_set_pixel_color">
+                                                        <value name="pixeloffset">
                                                           <shadow type="math_number">
                                                             <field name="NUM">1</field>
                                                           </shadow>
                                                         </value>
-                                                        <value name="value">
-                                                          <shadow id="0(2n1oB#1rZT]SwVS$*{" type="math_number">
-                                                            <field name="NUM">0</field>
+                                                        <value name="rgb">
+                                                          <shadow type="colorNumberPicker">
+                                                            <field name="value">0xff0000</field>
                                                           </shadow>
-                                                          <block type="variables_get">
-                                                            <field id="JD1WWS*#4TnT8i`r-a20" name="VAR" variabletype="">counter_a</field>
+                                                        </value>
+                                                        <next>
+                                                          <block type="variables_set">
+                                                            <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                            <value name="VALUE">
+                                                              <shadow type="math_number">
+                                                                <field name="NUM">1</field>
+                                                              </shadow>
+                                                            </value>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                    <statement name="ELSE">
+                                                      <block type="builtin_neopixel_set_pixel_color">
+                                                        <value name="pixeloffset">
+                                                          <shadow type="math_number">
+                                                            <field name="NUM">1</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="rgb">
+                                                          <shadow type="colorNumberPicker">
+                                                            <field name="value">0x000000</field>
+                                                          </shadow>
+                                                        </value>
+                                                      </block>
+                                                    </statement>
+                                                    <next>
+                                                      <block type="controls_if">
+                                                        <mutation else="1"></mutation>
+                                                        <value name="IF0">
+                                                          <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                            <field name="BOOL">TRUE</field>
+                                                          </shadow>
+                                                          <block type="logic_compare">
+                                                            <field name="OP">GT</field>
+                                                            <value name="A">
+                                                              <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                <field name="NUM">0</field>
+                                                              </shadow>
+                                                              <block type="device_temperature">
+                                                                <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="B">
+                                                              <shadow type="math_number">
+                                                                <field name="NUM">60</field>
+                                                              </shadow>
+                                                            </value>
                                                           </block>
                                                         </value>
+                                                        <statement name="DO0">
+                                                          <block type="builtin_neopixel_set_pixel_color">
+                                                            <value name="pixeloffset">
+                                                              <shadow type="math_number">
+                                                                <field name="NUM">2</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <value name="rgb">
+                                                              <shadow type="colorNumberPicker">
+                                                                <field name="value">0xff0000</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <next>
+                                                              <block type="variables_set">
+                                                                <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                <value name="VALUE">
+                                                                  <shadow type="math_number">
+                                                                    <field name="NUM">2</field>
+                                                                  </shadow>
+                                                                </value>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </statement>
+                                                        <statement name="ELSE">
+                                                          <block type="builtin_neopixel_set_pixel_color">
+                                                            <value name="pixeloffset">
+                                                              <shadow type="math_number">
+                                                                <field name="NUM">2</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <value name="rgb">
+                                                              <shadow type="colorNumberPicker">
+                                                                <field name="value">0x000000</field>
+                                                              </shadow>
+                                                            </value>
+                                                          </block>
+                                                        </statement>
+                                                        <next>
+                                                          <block type="controls_if">
+                                                            <mutation else="1"></mutation>
+                                                            <value name="IF0">
+                                                              <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                <field name="BOOL">TRUE</field>
+                                                              </shadow>
+                                                              <block type="logic_compare">
+                                                                <field name="OP">GT</field>
+                                                                <value name="A">
+                                                                  <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                    <field name="NUM">0</field>
+                                                                  </shadow>
+                                                                  <block type="device_temperature">
+                                                                    <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                  <shadow type="math_number">
+                                                                    <field name="NUM">65</field>
+                                                                  </shadow>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <statement name="DO0">
+                                                              <block type="builtin_neopixel_set_pixel_color">
+                                                                <value name="pixeloffset">
+                                                                  <shadow type="math_number">
+                                                                    <field name="NUM">3</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <value name="rgb">
+                                                                  <shadow type="colorNumberPicker">
+                                                                    <field name="value">0xff0000</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="variables_set">
+                                                                    <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                    <value name="VALUE">
+                                                                      <shadow type="math_number">
+                                                                        <field name="NUM">3</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </statement>
+                                                            <statement name="ELSE">
+                                                              <block type="builtin_neopixel_set_pixel_color">
+                                                                <value name="pixeloffset">
+                                                                  <shadow type="math_number">
+                                                                    <field name="NUM">3</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <value name="rgb">
+                                                                  <shadow type="colorNumberPicker">
+                                                                    <field name="value">0x000000</field>
+                                                                  </shadow>
+                                                                </value>
+                                                              </block>
+                                                            </statement>
+                                                            <next>
+                                                              <block type="controls_if">
+                                                                <mutation else="1"></mutation>
+                                                                <value name="IF0">
+                                                                  <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                    <field name="BOOL">TRUE</field>
+                                                                  </shadow>
+                                                                  <block type="logic_compare">
+                                                                    <field name="OP">GT</field>
+                                                                    <value name="A">
+                                                                      <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                        <field name="NUM">0</field>
+                                                                      </shadow>
+                                                                      <block type="device_temperature">
+                                                                        <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="B">
+                                                                      <shadow type="math_number">
+                                                                        <field name="NUM">70</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <statement name="DO0">
+                                                                  <block type="builtin_neopixel_set_pixel_color">
+                                                                    <value name="pixeloffset">
+                                                                      <shadow type="math_number">
+                                                                        <field name="NUM">4</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <value name="rgb">
+                                                                      <shadow type="colorNumberPicker">
+                                                                        <field name="value">0xff0000</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="variables_set">
+                                                                        <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                        <value name="VALUE">
+                                                                          <shadow type="math_number">
+                                                                            <field name="NUM">4</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </statement>
+                                                                <statement name="ELSE">
+                                                                  <block type="builtin_neopixel_set_pixel_color">
+                                                                    <value name="pixeloffset">
+                                                                      <shadow type="math_number">
+                                                                        <field name="NUM">4</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <value name="rgb">
+                                                                      <shadow type="colorNumberPicker">
+                                                                        <field name="value">0x000000</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                  </block>
+                                                                </statement>
+                                                                <next>
+                                                                  <block type="controls_if">
+                                                                    <mutation else="1"></mutation>
+                                                                    <value name="IF0">
+                                                                      <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                        <field name="BOOL">TRUE</field>
+                                                                      </shadow>
+                                                                      <block type="logic_compare">
+                                                                        <field name="OP">GT</field>
+                                                                        <value name="A">
+                                                                          <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                            <field name="NUM">0</field>
+                                                                          </shadow>
+                                                                          <block type="device_temperature">
+                                                                            <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <shadow type="math_number">
+                                                                            <field name="NUM">75</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <statement name="DO0">
+                                                                      <block type="builtin_neopixel_set_pixel_color">
+                                                                        <value name="pixeloffset">
+                                                                          <shadow type="math_number">
+                                                                            <field name="NUM">5</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                        <value name="rgb">
+                                                                          <shadow type="colorNumberPicker">
+                                                                            <field name="value">0xff0000</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="variables_set">
+                                                                            <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                            <value name="VALUE">
+                                                                              <shadow type="math_number">
+                                                                                <field name="NUM">5</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </statement>
+                                                                    <statement name="ELSE">
+                                                                      <block type="builtin_neopixel_set_pixel_color">
+                                                                        <value name="pixeloffset">
+                                                                          <shadow type="math_number">
+                                                                            <field name="NUM">5</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                        <value name="rgb">
+                                                                          <shadow type="colorNumberPicker">
+                                                                            <field name="value">0x000000</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                      </block>
+                                                                    </statement>
+                                                                    <next>
+                                                                      <block type="controls_if">
+                                                                        <mutation else="1"></mutation>
+                                                                        <value name="IF0">
+                                                                          <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                            <field name="BOOL">TRUE</field>
+                                                                          </shadow>
+                                                                          <block type="logic_compare">
+                                                                            <field name="OP">GT</field>
+                                                                            <value name="A">
+                                                                              <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                                <field name="NUM">0</field>
+                                                                              </shadow>
+                                                                              <block type="device_temperature">
+                                                                                <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <shadow type="math_number">
+                                                                                <field name="NUM">80</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <statement name="DO0">
+                                                                          <block type="builtin_neopixel_set_pixel_color">
+                                                                            <value name="pixeloffset">
+                                                                              <shadow type="math_number">
+                                                                                <field name="NUM">6</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                            <value name="rgb">
+                                                                              <shadow type="colorNumberPicker">
+                                                                                <field name="value">0xff0000</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="variables_set">
+                                                                                <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                                <value name="VALUE">
+                                                                                  <shadow type="math_number">
+                                                                                    <field name="NUM">6</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </statement>
+                                                                        <statement name="ELSE">
+                                                                          <block type="builtin_neopixel_set_pixel_color">
+                                                                            <value name="pixeloffset">
+                                                                              <shadow type="math_number">
+                                                                                <field name="NUM">6</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                            <value name="rgb">
+                                                                              <shadow type="colorNumberPicker">
+                                                                                <field name="value">0x000000</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                          </block>
+                                                                        </statement>
+                                                                        <next>
+                                                                          <block type="controls_if">
+                                                                            <mutation else="1"></mutation>
+                                                                            <value name="IF0">
+                                                                              <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                                <field name="BOOL">TRUE</field>
+                                                                              </shadow>
+                                                                              <block type="logic_compare">
+                                                                                <field name="OP">GT</field>
+                                                                                <value name="A">
+                                                                                  <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                                    <field name="NUM">0</field>
+                                                                                  </shadow>
+                                                                                  <block type="device_temperature">
+                                                                                    <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <shadow type="math_number">
+                                                                                    <field name="NUM">85</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <statement name="DO0">
+                                                                              <block type="builtin_neopixel_set_pixel_color">
+                                                                                <value name="pixeloffset">
+                                                                                  <shadow type="math_number">
+                                                                                    <field name="NUM">7</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                                <value name="rgb">
+                                                                                  <shadow type="colorNumberPicker">
+                                                                                    <field name="value">0xff0000</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                                <next>
+                                                                                  <block type="variables_set">
+                                                                                    <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                                    <value name="VALUE">
+                                                                                      <shadow type="math_number">
+                                                                                        <field name="NUM">7</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </statement>
+                                                                            <statement name="ELSE">
+                                                                              <block type="builtin_neopixel_set_pixel_color">
+                                                                                <value name="pixeloffset">
+                                                                                  <shadow type="math_number">
+                                                                                    <field name="NUM">7</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                                <value name="rgb">
+                                                                                  <shadow type="colorNumberPicker">
+                                                                                    <field name="value">0x000000</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                              </block>
+                                                                            </statement>
+                                                                            <next>
+                                                                              <block type="controls_if">
+                                                                                <mutation else="1"></mutation>
+                                                                                <value name="IF0">
+                                                                                  <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                                    <field name="BOOL">TRUE</field>
+                                                                                  </shadow>
+                                                                                  <block type="logic_compare">
+                                                                                    <field name="OP">GT</field>
+                                                                                    <value name="A">
+                                                                                      <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                                        <field name="NUM">0</field>
+                                                                                      </shadow>
+                                                                                      <block type="device_temperature">
+                                                                                        <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <shadow type="math_number">
+                                                                                        <field name="NUM">90</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <statement name="DO0">
+                                                                                  <block type="builtin_neopixel_set_pixel_color">
+                                                                                    <value name="pixeloffset">
+                                                                                      <shadow type="math_number">
+                                                                                        <field name="NUM">8</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                    <value name="rgb">
+                                                                                      <shadow type="colorNumberPicker">
+                                                                                        <field name="value">0xff0000</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="variables_set">
+                                                                                        <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                                        <value name="VALUE">
+                                                                                          <shadow type="math_number">
+                                                                                            <field name="NUM">8</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </statement>
+                                                                                <statement name="ELSE">
+                                                                                  <block type="builtin_neopixel_set_pixel_color">
+                                                                                    <value name="pixeloffset">
+                                                                                      <shadow type="math_number">
+                                                                                        <field name="NUM">8</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                    <value name="rgb">
+                                                                                      <shadow type="colorNumberPicker">
+                                                                                        <field name="value">0x000000</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </statement>
+                                                                                <next>
+                                                                                  <block type="controls_if">
+                                                                                    <mutation else="1"></mutation>
+                                                                                    <value name="IF0">
+                                                                                      <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                                        <field name="BOOL">TRUE</field>
+                                                                                      </shadow>
+                                                                                      <block type="logic_compare">
+                                                                                        <field name="OP">GT</field>
+                                                                                        <value name="A">
+                                                                                          <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                                            <field name="NUM">0</field>
+                                                                                          </shadow>
+                                                                                          <block type="device_temperature">
+                                                                                            <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <shadow type="math_number">
+                                                                                            <field name="NUM">95</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <statement name="DO0">
+                                                                                      <block type="builtin_neopixel_set_pixel_color">
+                                                                                        <value name="pixeloffset">
+                                                                                          <shadow type="math_number">
+                                                                                            <field name="NUM">9</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <value name="rgb">
+                                                                                          <shadow type="colorNumberPicker">
+                                                                                            <field name="value">0xff0000</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="variables_set">
+                                                                                            <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                                            <value name="VALUE">
+                                                                                              <shadow type="math_number">
+                                                                                                <field name="NUM">9</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </statement>
+                                                                                    <statement name="ELSE">
+                                                                                      <block type="builtin_neopixel_set_pixel_color">
+                                                                                        <value name="pixeloffset">
+                                                                                          <shadow type="math_number">
+                                                                                            <field name="NUM">9</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <value name="rgb">
+                                                                                          <shadow type="colorNumberPicker">
+                                                                                            <field name="value">0x000000</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </statement>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
                                                       </block>
                                                     </next>
                                                   </block>
@@ -411,9 +1331,737 @@
                                               </block>
                                             </next>
                                           </block>
+                                        </statement>
+                                        <statement name="ELSE">
+                                          <block type="builtin_neopixel_set_pixel_color">
+                                            <value name="pixeloffset">
+                                              <shadow type="math_number">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                            </value>
+                                            <value name="rgb">
+                                              <shadow type="colorNumberPicker">
+                                                <field name="value">0x7f00ff</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="variables_set">
+                                                <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                <value name="VALUE">
+                                                  <shadow type="math_number">
+                                                    <field name="NUM">0</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="controls_if">
+                                                    <mutation else="1"></mutation>
+                                                    <value name="IF0">
+                                                      <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                        <field name="BOOL">TRUE</field>
+                                                      </shadow>
+                                                      <block type="logic_compare">
+                                                        <field name="OP">LT</field>
+                                                        <value name="A">
+                                                          <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                            <field name="NUM">0</field>
+                                                          </shadow>
+                                                          <block type="device_temperature">
+                                                            <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <shadow type="math_number">
+                                                            <field name="NUM">45</field>
+                                                          </shadow>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="DO0">
+                                                      <block type="builtin_neopixel_set_pixel_color">
+                                                        <value name="pixeloffset">
+                                                          <shadow type="math_number">
+                                                            <field name="NUM">1</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="rgb">
+                                                          <shadow type="colorNumberPicker">
+                                                            <field name="value">0x007fff</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <next>
+                                                          <block type="variables_set">
+                                                            <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                            <value name="VALUE">
+                                                              <shadow type="math_number">
+                                                                <field name="NUM">1</field>
+                                                              </shadow>
+                                                            </value>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                    <statement name="ELSE">
+                                                      <block type="builtin_neopixel_set_pixel_color">
+                                                        <value name="pixeloffset">
+                                                          <shadow type="math_number">
+                                                            <field name="NUM">1</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="rgb">
+                                                          <shadow type="colorNumberPicker">
+                                                            <field name="value">0x000000</field>
+                                                          </shadow>
+                                                        </value>
+                                                      </block>
+                                                    </statement>
+                                                    <next>
+                                                      <block type="controls_if">
+                                                        <mutation else="1"></mutation>
+                                                        <value name="IF0">
+                                                          <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                            <field name="BOOL">TRUE</field>
+                                                          </shadow>
+                                                          <block type="logic_compare">
+                                                            <field name="OP">LT</field>
+                                                            <value name="A">
+                                                              <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                <field name="NUM">0</field>
+                                                              </shadow>
+                                                              <block type="device_temperature">
+                                                                <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="B">
+                                                              <shadow type="math_number">
+                                                                <field name="NUM">40</field>
+                                                              </shadow>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <statement name="DO0">
+                                                          <block type="builtin_neopixel_set_pixel_color">
+                                                            <value name="pixeloffset">
+                                                              <shadow type="math_number">
+                                                                <field name="NUM">2</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <value name="rgb">
+                                                              <shadow type="colorNumberPicker">
+                                                                <field name="value">0x007fff</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <next>
+                                                              <block type="variables_set">
+                                                                <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                <value name="VALUE">
+                                                                  <shadow type="math_number">
+                                                                    <field name="NUM">2</field>
+                                                                  </shadow>
+                                                                </value>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </statement>
+                                                        <statement name="ELSE">
+                                                          <block type="builtin_neopixel_set_pixel_color">
+                                                            <value name="pixeloffset">
+                                                              <shadow type="math_number">
+                                                                <field name="NUM">2</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <value name="rgb">
+                                                              <shadow type="colorNumberPicker">
+                                                                <field name="value">0x000000</field>
+                                                              </shadow>
+                                                            </value>
+                                                          </block>
+                                                        </statement>
+                                                        <next>
+                                                          <block type="controls_if">
+                                                            <mutation else="1"></mutation>
+                                                            <value name="IF0">
+                                                              <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                <field name="BOOL">TRUE</field>
+                                                              </shadow>
+                                                              <block type="logic_compare">
+                                                                <field name="OP">LT</field>
+                                                                <value name="A">
+                                                                  <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                    <field name="NUM">0</field>
+                                                                  </shadow>
+                                                                  <block type="device_temperature">
+                                                                    <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="B">
+                                                                  <shadow type="math_number">
+                                                                    <field name="NUM">35</field>
+                                                                  </shadow>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <statement name="DO0">
+                                                              <block type="builtin_neopixel_set_pixel_color">
+                                                                <value name="pixeloffset">
+                                                                  <shadow type="math_number">
+                                                                    <field name="NUM">3</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <value name="rgb">
+                                                                  <shadow type="colorNumberPicker">
+                                                                    <field name="value">0x007fff</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="variables_set">
+                                                                    <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                    <value name="VALUE">
+                                                                      <shadow type="math_number">
+                                                                        <field name="NUM">3</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </statement>
+                                                            <statement name="ELSE">
+                                                              <block type="builtin_neopixel_set_pixel_color">
+                                                                <value name="pixeloffset">
+                                                                  <shadow type="math_number">
+                                                                    <field name="NUM">3</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <value name="rgb">
+                                                                  <shadow type="colorNumberPicker">
+                                                                    <field name="value">0x000000</field>
+                                                                  </shadow>
+                                                                </value>
+                                                              </block>
+                                                            </statement>
+                                                            <next>
+                                                              <block type="controls_if">
+                                                                <value name="IF0">
+                                                                  <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                    <field name="BOOL">TRUE</field>
+                                                                  </shadow>
+                                                                  <block type="logic_compare">
+                                                                    <field name="OP">LT</field>
+                                                                    <value name="A">
+                                                                      <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                        <field name="NUM">0</field>
+                                                                      </shadow>
+                                                                      <block type="device_temperature">
+                                                                        <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="B">
+                                                                      <shadow type="math_number">
+                                                                        <field name="NUM">32</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <statement name="DO0">
+                                                                  <block type="builtin_neopixel_set_pixel_color">
+                                                                    <value name="pixeloffset">
+                                                                      <shadow type="math_number">
+                                                                        <field name="NUM">3</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                    <value name="rgb">
+                                                                      <shadow type="colorNumberPicker">
+                                                                        <field name="value">0x00ffff</field>
+                                                                      </shadow>
+                                                                    </value>
+                                                                  </block>
+                                                                </statement>
+                                                                <next>
+                                                                  <block type="controls_if">
+                                                                    <mutation else="1"></mutation>
+                                                                    <value name="IF0">
+                                                                      <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                        <field name="BOOL">TRUE</field>
+                                                                      </shadow>
+                                                                      <block type="logic_compare">
+                                                                        <field name="OP">LT</field>
+                                                                        <value name="A">
+                                                                          <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                            <field name="NUM">0</field>
+                                                                          </shadow>
+                                                                          <block type="device_temperature">
+                                                                            <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <shadow type="math_number">
+                                                                            <field name="NUM">30</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <statement name="DO0">
+                                                                      <block type="builtin_neopixel_set_pixel_color">
+                                                                        <value name="pixeloffset">
+                                                                          <shadow type="math_number">
+                                                                            <field name="NUM">4</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                        <value name="rgb">
+                                                                          <shadow type="colorNumberPicker">
+                                                                            <field name="value">0x00ffff</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="variables_set">
+                                                                            <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                            <value name="VALUE">
+                                                                              <shadow type="math_number">
+                                                                                <field name="NUM">4</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </statement>
+                                                                    <statement name="ELSE">
+                                                                      <block type="builtin_neopixel_set_pixel_color">
+                                                                        <value name="pixeloffset">
+                                                                          <shadow type="math_number">
+                                                                            <field name="NUM">4</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                        <value name="rgb">
+                                                                          <shadow type="colorNumberPicker">
+                                                                            <field name="value">0x000000</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                      </block>
+                                                                    </statement>
+                                                                    <next>
+                                                                      <block type="controls_if">
+                                                                        <mutation else="1"></mutation>
+                                                                        <value name="IF0">
+                                                                          <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                            <field name="BOOL">TRUE</field>
+                                                                          </shadow>
+                                                                          <block type="logic_compare">
+                                                                            <field name="OP">LT</field>
+                                                                            <value name="A">
+                                                                              <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                                <field name="NUM">0</field>
+                                                                              </shadow>
+                                                                              <block type="device_temperature">
+                                                                                <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="B">
+                                                                              <shadow type="math_number">
+                                                                                <field name="NUM">25</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                        <statement name="DO0">
+                                                                          <block type="builtin_neopixel_set_pixel_color">
+                                                                            <value name="pixeloffset">
+                                                                              <shadow type="math_number">
+                                                                                <field name="NUM">5</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                            <value name="rgb">
+                                                                              <shadow type="colorNumberPicker">
+                                                                                <field name="value">0x00ffff</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                            <next>
+                                                                              <block type="variables_set">
+                                                                                <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                                <value name="VALUE">
+                                                                                  <shadow type="math_number">
+                                                                                    <field name="NUM">5</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </statement>
+                                                                        <statement name="ELSE">
+                                                                          <block type="builtin_neopixel_set_pixel_color">
+                                                                            <value name="pixeloffset">
+                                                                              <shadow type="math_number">
+                                                                                <field name="NUM">5</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                            <value name="rgb">
+                                                                              <shadow type="colorNumberPicker">
+                                                                                <field name="value">0x000000</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                          </block>
+                                                                        </statement>
+                                                                        <next>
+                                                                          <block type="controls_if">
+                                                                            <mutation else="1"></mutation>
+                                                                            <value name="IF0">
+                                                                              <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                                <field name="BOOL">TRUE</field>
+                                                                              </shadow>
+                                                                              <block type="logic_compare">
+                                                                                <field name="OP">LT</field>
+                                                                                <value name="A">
+                                                                                  <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                                    <field name="NUM">0</field>
+                                                                                  </shadow>
+                                                                                  <block type="device_temperature">
+                                                                                    <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="B">
+                                                                                  <shadow type="math_number">
+                                                                                    <field name="NUM">20</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <statement name="DO0">
+                                                                              <block type="builtin_neopixel_set_pixel_color">
+                                                                                <value name="pixeloffset">
+                                                                                  <shadow type="math_number">
+                                                                                    <field name="NUM">6</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                                <value name="rgb">
+                                                                                  <shadow type="colorNumberPicker">
+                                                                                    <field name="value">0x00ffff</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                                <next>
+                                                                                  <block type="variables_set">
+                                                                                    <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                                    <value name="VALUE">
+                                                                                      <shadow type="math_number">
+                                                                                        <field name="NUM">6</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </statement>
+                                                                            <statement name="ELSE">
+                                                                              <block type="builtin_neopixel_set_pixel_color">
+                                                                                <value name="pixeloffset">
+                                                                                  <shadow type="math_number">
+                                                                                    <field name="NUM">6</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                                <value name="rgb">
+                                                                                  <shadow type="colorNumberPicker">
+                                                                                    <field name="value">0x000000</field>
+                                                                                  </shadow>
+                                                                                </value>
+                                                                              </block>
+                                                                            </statement>
+                                                                            <next>
+                                                                              <block type="controls_if">
+                                                                                <mutation else="1"></mutation>
+                                                                                <value name="IF0">
+                                                                                  <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                                    <field name="BOOL">TRUE</field>
+                                                                                  </shadow>
+                                                                                  <block type="logic_compare">
+                                                                                    <field name="OP">LT</field>
+                                                                                    <value name="A">
+                                                                                      <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                                        <field name="NUM">0</field>
+                                                                                      </shadow>
+                                                                                      <block type="device_temperature">
+                                                                                        <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="B">
+                                                                                      <shadow type="math_number">
+                                                                                        <field name="NUM">15</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <statement name="DO0">
+                                                                                  <block type="builtin_neopixel_set_pixel_color">
+                                                                                    <value name="pixeloffset">
+                                                                                      <shadow type="math_number">
+                                                                                        <field name="NUM">7</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                    <value name="rgb">
+                                                                                      <shadow type="colorNumberPicker">
+                                                                                        <field name="value">0x00ffff</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="variables_set">
+                                                                                        <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                                        <value name="VALUE">
+                                                                                          <shadow type="math_number">
+                                                                                            <field name="NUM">7</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </statement>
+                                                                                <statement name="ELSE">
+                                                                                  <block type="builtin_neopixel_set_pixel_color">
+                                                                                    <value name="pixeloffset">
+                                                                                      <shadow type="math_number">
+                                                                                        <field name="NUM">7</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                    <value name="rgb">
+                                                                                      <shadow type="colorNumberPicker">
+                                                                                        <field name="value">0x000000</field>
+                                                                                      </shadow>
+                                                                                    </value>
+                                                                                  </block>
+                                                                                </statement>
+                                                                                <next>
+                                                                                  <block type="controls_if">
+                                                                                    <mutation else="1"></mutation>
+                                                                                    <value name="IF0">
+                                                                                      <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                                        <field name="BOOL">TRUE</field>
+                                                                                      </shadow>
+                                                                                      <block type="logic_compare">
+                                                                                        <field name="OP">LT</field>
+                                                                                        <value name="A">
+                                                                                          <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                                            <field name="NUM">0</field>
+                                                                                          </shadow>
+                                                                                          <block type="device_temperature">
+                                                                                            <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <shadow type="math_number">
+                                                                                            <field name="NUM">10</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <statement name="DO0">
+                                                                                      <block type="builtin_neopixel_set_pixel_color">
+                                                                                        <value name="pixeloffset">
+                                                                                          <shadow type="math_number">
+                                                                                            <field name="NUM">8</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <value name="rgb">
+                                                                                          <shadow type="colorNumberPicker">
+                                                                                            <field name="value">0x00ffff</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <next>
+                                                                                          <block type="variables_set">
+                                                                                            <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                                            <value name="VALUE">
+                                                                                              <shadow type="math_number">
+                                                                                                <field name="NUM">8</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </statement>
+                                                                                    <statement name="ELSE">
+                                                                                      <block type="builtin_neopixel_set_pixel_color">
+                                                                                        <value name="pixeloffset">
+                                                                                          <shadow type="math_number">
+                                                                                            <field name="NUM">8</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                        <value name="rgb">
+                                                                                          <shadow type="colorNumberPicker">
+                                                                                            <field name="value">0x000000</field>
+                                                                                          </shadow>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </statement>
+                                                                                    <next>
+                                                                                      <block type="controls_if">
+                                                                                        <mutation else="1"></mutation>
+                                                                                        <value name="IF0">
+                                                                                          <shadow id="kdCkZ=S-W5IO}UG~g))5" type="logic_boolean">
+                                                                                            <field name="BOOL">TRUE</field>
+                                                                                          </shadow>
+                                                                                          <block type="logic_compare">
+                                                                                            <field name="OP">LT</field>
+                                                                                            <value name="A">
+                                                                                              <shadow id="e,(]jZ4%s=5w!Q`A]O#`" type="math_number">
+                                                                                                <field name="NUM">0</field>
+                                                                                              </shadow>
+                                                                                              <block type="device_temperature">
+                                                                                                <field name="unit">TemperatureUnit.Fahrenheit</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="B">
+                                                                                              <shadow type="math_number">
+                                                                                                <field name="NUM">5</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <statement name="DO0">
+                                                                                          <block type="builtin_neopixel_set_pixel_color">
+                                                                                            <value name="pixeloffset">
+                                                                                              <shadow type="math_number">
+                                                                                                <field name="NUM">9</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <value name="rgb">
+                                                                                              <shadow type="colorNumberPicker">
+                                                                                                <field name="value">0x00ffff</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <next>
+                                                                                              <block type="variables_set">
+                                                                                                <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                                                                <value name="VALUE">
+                                                                                                  <shadow type="math_number">
+                                                                                                    <field name="NUM">9</field>
+                                                                                                  </shadow>
+                                                                                                </value>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </statement>
+                                                                                        <statement name="ELSE">
+                                                                                          <block type="builtin_neopixel_set_pixel_color">
+                                                                                            <value name="pixeloffset">
+                                                                                              <shadow type="math_number">
+                                                                                                <field name="NUM">9</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                            <value name="rgb">
+                                                                                              <shadow type="colorNumberPicker">
+                                                                                                <field name="value">0x000000</field>
+                                                                                              </shadow>
+                                                                                            </value>
+                                                                                          </block>
+                                                                                        </statement>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="com_github_maxwellb_toolbox_blink">
+                                            <value name="pixeloffset">
+                                              <shadow id="u!z@XBwAt{sVfL:WL*_@" type="math_number">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                              <block type="variables_get">
+                                                <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                              </block>
+                                            </value>
+                                            <value name="bpm">
+                                              <shadow id="GiuR@LrQuphElV`)u{fU" type="math_number">
+                                                <field name="NUM">0</field>
+                                              </shadow>
+                                              <block type="math_arithmetic">
+                                                <field name="OP">ADD</field>
+                                                <value name="A">
+                                                  <shadow type="math_number">
+                                                    <field name="NUM">50</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="B">
+                                                  <shadow id="+]JvNj8GWSMt?3u;~JdS" type="math_number">
+                                                    <field name="NUM">0</field>
+                                                  </shadow>
+                                                  <block type="math_arithmetic">
+                                                    <field name="OP">MULTIPLY</field>
+                                                    <value name="A">
+                                                      <shadow type="math_number">
+                                                        <field name="NUM">15</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="B">
+                                                      <shadow id="Sp223n15-LIZ1N$2/:?[" type="math_number">
+                                                        <field name="NUM">0</field>
+                                                      </shadow>
+                                                      <block type="variables_get">
+                                                        <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="repeat">
+                                              <shadow type="math_number">
+                                                <field name="NUM">2</field>
+                                              </shadow>
+                                            </value>
+                                            <next>
+                                              <block type="device_pause">
+                                                <value name="pause">
+                                                  <shadow id="99X9Jh(fPv3nY:.7gd5{" type="timePicker">
+                                                    <field name="ms">1000</field>
+                                                  </shadow>
+                                                  <block type="math_arithmetic">
+                                                    <field name="OP">MINUS</field>
+                                                    <value name="A">
+                                                      <shadow type="math_number">
+                                                        <field name="NUM">5000</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="B">
+                                                      <shadow id="=1;3=oh5(t~-P5Z9D(O;" type="math_number">
+                                                        <field name="NUM">0</field>
+                                                      </shadow>
+                                                      <block type="math_arithmetic">
+                                                        <field name="OP">MULTIPLY</field>
+                                                        <value name="A">
+                                                          <shadow type="math_number">
+                                                            <field name="NUM">460</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="B">
+                                                          <shadow id="6n@O/7/sxe^+|;[,I?b5" type="math_number">
+                                                            <field name="NUM">0</field>
+                                                          </shadow>
+                                                          <block type="variables_get">
+                                                            <field id="Fx:!5e|,5lK7X,GhJiq6" name="VAR" variabletype="">blinky</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
                                         </next>
                                       </block>
-                                    </next>
+                                    </statement>
                                   </block>
                                 </next>
                               </block>
@@ -431,60 +2079,57 @@
       </block>
     </statement>
   </block>
-  <block type="control_on_event" x="450" y="-10">
-    <value name="src">
-      <shadow type="math_number">
-        <field name="NUM">1</field>
-      </shadow>
-    </value>
-    <value name="value">
-      <shadow type="math_number">
-        <field name="NUM">3</field>
-      </shadow>
-    </value>
+  <block type="input_on_light_condition_changed" y="680" x="200">
+    <field name="condition">LightCondition.Bright</field>
     <statement name="HANDLER">
-      <block type="controls_repeat_ext">
-        <value name="TIMES">
-          <shadow type="math_whole_number">
-            <field name="NUM">3</field>
+      <block type="variables_set">
+        <field id="JgWjT}1e:[tAc;j9;8O|" name="VAR" variabletype="">ambient</field>
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
           </shadow>
         </value>
-        <statement name="DO">
-          <block type="builtin_neopixel_set_strip_color">
-            <value name="rgb">
-              <shadow type="colorNumberPicker">
-                <field name="value">0xffff00</field>
+      </block>
+    </statement>
+  </block>
+  <block type="buttonEvent" y="820" x="0">
+    <field name="button">input.buttonB</field>
+    <field name="event">ButtonEvent.LongClick</field>
+    <statement name="HANDLER">
+      <block type="lightsensor_set_threshold">
+        <field name="condition">LightCondition.Bright</field>
+        <value name="value">
+          <shadow id="TAwgdAP:tPjUwzYZ2gkv" type="math_number_minmax">
+            <mutation min="1" max="255" label="Value"></mutation>
+            <field name="SLIDER">0</field>
+          </shadow>
+          <block type="math_arithmetic">
+            <field name="OP">MULTIPLY</field>
+            <value name="A">
+              <shadow id="m?$M~VfZH@~L8?whkRB$" type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="device_get_light_level"></block>
+            </value>
+            <value name="B">
+              <shadow type="math_number">
+                <field name="NUM">1.5</field>
               </shadow>
             </value>
-            <next>
-              <block type="device_pause">
-                <value name="pause">
-                  <shadow type="timePicker">
-                    <field name="ms">500</field>
-                  </shadow>
-                </value>
-                <next>
-                  <block type="builtin_neopixel_set_strip_color">
-                    <value name="rgb">
-                      <shadow type="colorNumberPicker">
-                        <field name="value">0x000000</field>
-                      </shadow>
-                    </value>
-                    <next>
-                      <block type="device_pause">
-                        <value name="pause">
-                          <shadow type="timePicker">
-                            <field name="ms">500</field>
-                          </shadow>
-                        </value>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
           </block>
-        </statement>
+        </value>
+        <next>
+          <block type="lightsensor_set_threshold">
+            <field name="condition">LightCondition.Dark</field>
+            <value name="value">
+              <shadow id="TAwgdAP:tPjUwzYZ2gkv" type="math_number_minmax">
+                <mutation min="1" max="255" label="Value"></mutation>
+                <field name="SLIDER">0</field>
+              </shadow>
+              <block type="device_get_light_level"></block>
+            </value>
+          </block>
+        </next>
       </block>
     </statement>
   </block>
