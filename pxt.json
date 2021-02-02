@@ -4,7 +4,7 @@
     "description": "",
     "dependencies": {
         "circuit-playground": "*",
-        "toolbox": "github:maxwellb/pxt-toolbox#9d9baa7a7b1a98cfb3123bbdb84168c25bf932a0"
+        "toolbox": "github:maxwellb/pxt-toolbox#20b5a1132b4fafd3012245e36d751bb214a03697"
     },
     "files": [
         "README.md",
