@@ -1,10 +1,26 @@
 control.onEvent(1, 3, function () {
-    for (let i = 0; i < 3; i++) {
+    for (let index = 0; index < 3; index++) {
         light.setAll(0xffff00)
         pause(500)
         light.setAll(0x000000)
         pause(500)
     }
+    light.setAll(0x7f00ff)
+    com.github.maxwellb.toolbox.blink(0, 88, 3)
+    com.github.maxwellb.toolbox.blink(1, 88, 3)
+    com.github.maxwellb.toolbox.blink(2, 88, 3)
+    light.setPixelColor(9, 0xff0000)
+    light.setPixelColor(8, 0x00ff00)
+    light.setPixelColor(7, 0x007fff)
+    control.runInParallel(function () {
+        com.github.maxwellb.toolbox.blink(9, 88, 3)
+    })
+    control.runInParallel(function () {
+        com.github.maxwellb.toolbox.blink(8, 88, 3)
+    })
+    control.runInParallel(function () {
+        com.github.maxwellb.toolbox.blink(7, 88, 3)
+    })
 })
 let counter_a = 0
 control.runInParallel(function () {
